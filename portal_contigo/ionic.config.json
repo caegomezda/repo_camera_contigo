@@ -1,0 +1,7 @@
+{
+  "name": "portal_contigo",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
