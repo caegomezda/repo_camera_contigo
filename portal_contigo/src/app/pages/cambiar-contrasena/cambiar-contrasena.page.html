@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-toolbar>
+
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="menu" icon="arrow-back-outline" mode="md"></ion-back-button>
+    </ion-buttons>
+
+    <ion-title>cambiarContrasena</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="container" class="ion-padding">
+
+    <form>
+  
+      <div class="container">
+        <ion-item lines="none"> 
+          <ion-label>Contraseña Anterior</ion-label>
+        </ion-item>
+        <ion-item lines="full">
+          <ion-input name="password" [(ngModel)]="passwordForm.claveAnterior" type="password" required></ion-input>
+        </ion-item>
+      </div>
+      
+  
+      
+      <div class="container">
+        <ion-item lines="none"> 
+          <ion-label>Nueva Contraseña: </ion-label>
+        </ion-item>
+        <ion-item lines="full">
+          <ion-input name="password" [(ngModel)]="passwordForm.claveNueva" type="password" required></ion-input>
+        </ion-item>
+      </div>
+      
+      <div class="container">
+        <ion-item lines="none"> 
+          <ion-label>Confirmar Contraseña: </ion-label>
+        </ion-item>
+        <ion-item lines="full">
+          <ion-input name="password" [(ngModel)]="passwordForm.reClaveNueva" type="password" required></ion-input>
+        </ion-item>
+      </div>
+      
+      <ion-row>
+        <ion-col>
+          <ion-button type="submit" color="medium" expand="block" (click)="rPassword()">Cambiar Contraseña</ion-button>
+        </ion-col>
+      </ion-row>
+    </form>
+    
+  </div>
+</ion-content>

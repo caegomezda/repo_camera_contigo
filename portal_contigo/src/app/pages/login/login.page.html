@@ -1,0 +1,59 @@
+<ion-header >
+  <ion-toolbar class="new-background-color">
+
+        <!-- <ion-buttons slot="start">
+          <ion-back-button defaultHref="home" icon="arrow-back-outline"></ion-back-button>
+        </ion-buttons> -->
+    
+    <ion-title>Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<div class="container" class="ion-padding">
+
+  <form [formGroup]="loginForm">
+
+    
+    <ion-item> 
+      <ion-label position="floating">Usuario: </ion-label>
+      <ion-input 
+        type="text"
+        formControlName="Pusuario"
+        autofocus="true"
+        required>
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label  position="floating">Contraseña</ion-label>
+      <ion-input  
+        #passwordEyeRegister  
+        [type]="passwordTypeInput"  
+        formControlName="Ppassword" 
+        clearOnEdit="false"           
+        autofocus="true"
+        required> 
+      </ion-input>
+      <button  item-end class="btn_eye_icon"  (click)="togglePasswordMode()">
+        <div>
+          <ion-icon  [name]="(passwordTypeInput === 'text')?'eye':'eye-off'"></ion-icon>
+        </div>
+      </button>
+    </ion-item>
+    
+    <ion-row>
+      <ion-col>
+        <ion-button type="submit" color="medium" expand="block" (click)="auntenticar()">AUTENTICAR</ion-button>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-button type="submit" class="new-button-background-color" expand="block" (click)="rPassword()">RECUPERAR CONTRASELA</ion-button>
+      </ion-col>
+    </ion-row>
+  </form>
+  
+</div>
+</ion-content>

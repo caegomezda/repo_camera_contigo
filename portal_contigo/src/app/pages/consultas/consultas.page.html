@@ -1,0 +1,87 @@
+<ion-header>
+  <ion-toolbar color="warning">
+
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="menu" icon="arrow-back-outline" mode="md"></ion-back-button>
+    </ion-buttons>
+
+    <ion-title>consultas</ion-title>
+  </ion-toolbar>
+
+  <ion-item lines="none" >
+    <ion-label align=center>
+      <font size="1">En esta sección podrá realizar consultas generales de manera inmediata</font>
+    </ion-label>
+  </ion-item>
+
+</ion-header>
+
+<ion-content>
+  <ion-list>
+
+    <div align=center class="ion-padding">
+        <ion-button  (click)="comprobanteDePago()" expand="full" color="medium">
+          <ion-label align=center>
+            COMPROBANTE DE PAGO
+          </ion-label>
+        </ion-button>
+    </div>
+
+    <div align=center class="ion-padding">
+      <ion-button  (click)="certificadoLaboral()" expand="full" color="medium">
+        <ion-label align=center>
+          CERTIFICADO LABORAL
+        </ion-label>
+      </ion-button>
+    </div>
+
+    <div align=center class="ion-padding">
+      <ion-button  (click)="primasLegales()" expand="full" color="medium">
+        <ion-label align=center>
+          PRIMAS LEGALES
+        </ion-label>
+      </ion-button>
+    </div>
+
+    <div align=center class="ion-padding">
+      <ion-button  (click)="primasConvecionales()" expand="full" color="medium">
+        <ion-label align=center>
+          PRIMAS CONVENCIONALES
+        </ion-label>
+      </ion-button>
+    </div>
+
+    <div align=center class="ion-padding">
+      <ion-button  (click)="cesantiasEIntereses()" expand="full" color="medium">
+        <ion-label align=center>
+          CESANTÍAS E INTERESES
+        </ion-label>
+      </ion-button>
+    </div>
+    
+    <div align=center class="ion-padding">
+      <ion-button  (click)="miHistorialDePemisos()" expand="full" color="medium">
+        <ion-label align=center>
+          MI HISTORIAL DE PERMISOS
+        </ion-label>
+      </ion-button>
+    </div>
+
+    <div align=center class="ion-padding">
+      <ion-button  (click)="mihistorialDeIncapacidad()" expand="full" color="medium">
+        <ion-label align=center>
+          MI HISTORIAL DE INCAPACIDAD
+        </ion-label>
+      </ion-button>
+    </div>
+
+    <div align=center class="ion-padding">
+      <ion-button  (click)="miNivelDeEndeundamiento()" expand="full" color="medium">
+        <ion-label align=center>
+          MI NIVEL DE ENDEUDAMIENTO
+        </ion-label>
+      </ion-button>
+    </div>
+
+  </ion-list>
+</ion-content>

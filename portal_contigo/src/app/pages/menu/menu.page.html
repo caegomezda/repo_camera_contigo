@@ -1,0 +1,183 @@
+<ion-header>
+  <ion-toolbar>
+
+    <!-- <ion-buttons slot="start">
+      <ion-back-button defaultHref="login" icon="arrow-back-outline" mode="md"></ion-back-button>
+    </ion-buttons> -->
+
+    <ion-title>Inicio</ion-title>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content> 
+
+  <ion-item lines="none" >
+    <ion-label align=center>
+      <font size="2">Seleccione la opción que desea realizar</font>
+    </ion-label>
+  </ion-item>
+
+  <ion-grid fixed>
+  
+    <ion-row class="ion-align-items-center ion-padding">
+      <ion-col>
+        <div align=center>
+            <img (click)="misPendientes()" align=center class="img" src="../../../assets/imagenes/btn_mis_pendientes.png" alt="">
+        </div>
+        <div align=center>
+          <ion-label>
+            <font size="1">MIS PENDIENTES</font>
+          </ion-label>
+        </div>
+      </ion-col>
+
+      <ion-col>
+        <div align=center>
+            <img (click)="solicitudes()" align=center class="img" src="../../../assets/imagenes/btn_solicitudes.png" alt="">
+        </div>
+        <div align=center>
+          <ion-label>
+            <font size="1">SOLICITUDES</font>
+          </ion-label>
+        </div>
+      </ion-col>
+
+      <ion-col>
+        <div align=center>
+          <button class="img-container" (click)="consultas()">
+            <ion-icon name="add" size="large"></ion-icon>
+          </button>
+        </div>
+        <div align=center>
+          <ion-label>
+            <font size="1">CONSULTAS</font>
+          </ion-label>
+        </div>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="ion-align-items-center ion-padding">
+      <ion-col>
+        <div align=center>
+          <button class="img-container" size="large" (click)="cartelera()">
+            <ion-icon name="add" size="large"></ion-icon>
+          </button>
+        </div>
+        <div align=center>
+          <ion-label>
+            <font size="1">CARTELERA</font>
+          </ion-label>
+        </div>
+      </ion-col>
+
+      <ion-col>
+        <div align=center>
+          <button  class="img-container" size="large" (click)="politicas()">
+            <ion-icon class="ion-align-self-start" name="add" size="large"></ion-icon>
+          </button>
+        </div>
+        <div align=center>
+          <ion-label>
+            <font size="1">POLÍTICAS</font>
+          </ion-label>
+        </div>
+      </ion-col>
+
+      <ion-col>
+        <div align=center>
+          <button class="img-container"(click)="preguntas()" >
+            <ion-icon name="add" size="large" ></ion-icon>
+          </button>
+        </div>
+        <div align=center>
+          <ion-label>
+            <font size="1">PREGUNTAS</font>
+          </ion-label>
+        </div>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="ion-align-items-center ion-padding">
+      <ion-col>
+        <div align=center>
+          <button (click)="cambiarContrasena()" size="large" >
+            <ion-icon name="add" size="large"></ion-icon>
+          </button>
+        </div>
+        <div align=center>
+          <ion-label>
+            <font size="1">CAMBIAR CONTRASEÑA</font>
+          </ion-label>
+        </div>
+      </ion-col>
+
+      <ion-col>
+        <div align=center>
+          <button size="large" (click)="aulaVirtual()">
+            <ion-icon class="ion-align-self-start" name="add" size="large"></ion-icon>
+          </button>
+        </div>
+        <div align=center>
+          <ion-label>
+            <font size="1">AULA VIRTUAL</font>
+          </ion-label>
+        </div>
+      </ion-col>
+
+      <ion-col>
+        <div align=center>
+          <button>
+            <ion-icon name="add" size="large" (click)="aprobaciones()"></ion-icon>
+          </button>
+        </div>
+        <div align=center>
+          <ion-label>
+            <font size="1">APROBACIONES</font>
+          </ion-label>
+        </div>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="ion-align-items-center ion-padding">
+      <ion-col>
+        <div align=center>
+          <button size="large" (click)="chat()">
+            <ion-icon name="add" size="large"></ion-icon>
+          </button>
+        </div>
+        <div align=center>
+          <ion-label>
+            <font size="1">CHAT</font>
+          </ion-label>
+        </div>
+      </ion-col>
+
+      <ion-col>
+        <div align=center>
+          <button size="large" (click)="formularioCovid()">
+            <ion-icon class="ion-align-self-start" name="add" size="large"></ion-icon>
+          </button>
+        </div>
+        <div align=center>
+          <ion-label>
+            <font size="1">FORMULARIO COVID</font>
+          </ion-label>
+        </div>
+      </ion-col>
+
+      <ion-col>
+        <div align=center>
+          <!-- <button>
+            <ion-icon name="add" size="large"></ion-icon>
+          </button> -->
+        </div>
+        <div align=center>
+          <ion-label>
+            <font size="1"></font>
+          </ion-label>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

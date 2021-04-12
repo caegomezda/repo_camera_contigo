@@ -1,0 +1,111 @@
+<ion-header>
+  <ion-toolbar color="warning">
+
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="menu" icon="arrow-back-outline" mode="md"></ion-back-button>
+    </ion-buttons>
+
+    <ion-title>solicitudes</ion-title>
+  </ion-toolbar>
+
+  <ion-item lines="none" >
+    <ion-label align=center>
+      <font size="2">Lista de solicitudes pendientes</font>
+    </ion-label>
+  </ion-item>
+
+</ion-header>
+
+<ion-content>
+  <ion-list>
+
+    <div align=center class="ion-padding">
+        <ion-button  (click)="auxiliosConvencionales()" expand="full" color="warning">
+          <ion-label align=center>
+            AUXILIOS CONVENCIONALES
+          </ion-label>
+        </ion-button>
+    </div>
+
+    <div align=center class="ion-padding">
+      <ion-button  (click)="auxiliosEstudio()" expand="full" color="warning">
+        <ion-label align=center>
+          AUXILIOS ESTUDIO
+        </ion-label>
+      </ion-button>
+    </div>
+
+    <div align=center class="ion-padding">
+      <ion-button  (click)="vacaciones()" expand="full" color="warning">
+        <ion-label align=center>
+          VACACIONES
+        </ion-label>
+      </ion-button>
+    </div>
+
+    <div align=center class="ion-padding">
+      <ion-button  (click)="cesantias()" expand="full" color="warning">
+        <ion-label align=center>
+          CESANTÍAS
+        </ion-label>
+      </ion-button>
+    </div>
+
+    <div align=center class="ion-padding">
+      <ion-button  (click)="reportesDeNomina()" expand="full" color="warning">
+        <ion-label align=center>
+          REPORTES DE NÓMINA
+        </ion-label>
+      </ion-button>
+    </div>
+    
+    <div align=center class="ion-padding">
+      <ion-button  (click)="camboBeneficiarioSeguridadSocial()" expand="full" color="warning">
+        <ion-label align=center>
+          CAMBIO BENEFICIARIO SEGURIDAD SOCIAL
+        </ion-label>
+      </ion-button>
+    </div>
+
+    <div align=center class="ion-padding">
+      <ion-button  (click)="reporteIncapacidadYCalamidad()" expand="full" color="warning">
+        <ion-label align=center>
+          REPORTE INCAPACIDAD Y CALAMIDADES
+        </ion-label>
+      </ion-button>
+    </div>
+
+    <div align=center class="ion-padding">
+      <ion-button  (click)="citasPresenciales()" expand="full" color="warning">
+        <ion-label align=center>
+          CITAS PRESENCIALES
+        </ion-label>
+      </ion-button>
+    </div>
+
+    <div align=center class="ion-padding">
+      <ion-button  (click)="calificarServicios()" expand="full" color="warning">
+        <ion-label align=center>
+          CALIFICAR SERVICIOS
+        </ion-label>
+      </ion-button>
+    </div>
+
+    <div align=center class="ion-padding">
+      <ion-button  (click)="actualizarDatosPersonales()" expand="full" color="warning">
+        <ion-label align=center>
+          ACTUALIZAR DATOS PERSONALES
+        </ion-label>
+      </ion-button>
+    </div>
+
+    <div align=center class="ion-padding">
+      <ion-button  (click)="certificadoDeIngresoYRetencion()" expand="full" color="warning">
+        <ion-label align=center>
+          CERTIFICADO DE INGRESOS Y RETENCIÓN
+        </ion-label>
+      </ion-button>
+    </div>
+
+  </ion-list>
+</ion-content>
