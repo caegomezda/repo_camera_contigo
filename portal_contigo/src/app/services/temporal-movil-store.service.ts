@@ -4,7 +4,8 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class TemporalMovilStoreService {
-  infoUsuario:any
+  infoUsuario:any;
+  solicitudDetalle:any
   constructor() { }
 
   ngOnInit(){
@@ -22,4 +23,13 @@ export class TemporalMovilStoreService {
   sendInfoUsuario(){
     return this.infoUsuario;
   }
+
+  getInfoListSolicitudDetalle(solicitud){
+    this.solicitudDetalle = solicitud;
+  }
+  
+  sendInfoListSolicitudDetalle(){
+    return this.solicitudDetalle;
+  }
+
 }

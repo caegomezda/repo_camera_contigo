@@ -54,6 +54,10 @@ const routes: Routes = [
     path: 'componente-auxilio-convencional',
     loadChildren: () => import('./pages/componente-auxilio-convencional/componente-auxilio-convencional.module').then( m => m.ComponenteAuxilioConvencionalPageModule)
   },
+  {
+    path: 'mis-pendientes-detalle',
+    loadChildren: () => import('./pages/mis-pendientes-detalle/mis-pendientes-detalle.module').then( m => m.MisPendientesDetallePageModule)
+  },
 
 
 

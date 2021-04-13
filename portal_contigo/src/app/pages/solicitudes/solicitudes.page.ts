@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ModalController } from '@ionic/angular';
 
 @Component({
   selector: 'app-solicitudes',
@@ -9,8 +8,10 @@ import { ModalController } from '@ionic/angular';
 })
 export class SolicitudesPage implements OnInit {
 
-  constructor(private  modalController: ModalController,
-              private router: Router) { }
+
+
+
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }

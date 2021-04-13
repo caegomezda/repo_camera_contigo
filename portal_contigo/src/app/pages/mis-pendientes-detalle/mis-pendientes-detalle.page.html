@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Detalle de la Solicitud</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-item lines="none" >
+      <ion-label align=center>
+        <font size="2">En esta seccion pueden visualizar</font>
+      </ion-label>
+    </ion-item>
+    <div align=center >
+      <ion-card >
+        <div *ngIf="isLoad">
+
+            <ion-label>
+              <h2 class="text">
+                <small>
+                {{solicitudDetalle.Codigo}}-{{solicitudDetalle.Fecha}}-{{solicitudDetalle.Estado}}-{{solicitudDetalle.Hora}}
+              </small>
+              </h2>
+              <h3>  
+                {{solicitudDetalle.TipoSolicitud}}
+              </h3>
+            </ion-label>
+        </div>
+
+
+
+      </ion-card>
+    </div>
+  </ion-card>
+</ion-content>
