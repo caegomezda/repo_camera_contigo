@@ -19,10 +19,9 @@
     <div align=center >
       <!-- <textarea name="ListaDeSolicitudesPendientes" id="" cols="30" rows="10">
       </textarea> -->
-      <ion-card >
         <div *ngIf="isLoad">
 
-          <ion-item *ngFor="let solicitudes of listaSolicitudes">
+          <ion-item *ngFor="let solicitudes of listaInfoSolicitudes" lines="full">
             <!-- <ion-row>
               <p>{{solicitudes.Codigo}}</p>
               <p>{{solicitudes.Fecha}}</p>
@@ -44,7 +43,6 @@
 
 
 
-      </ion-card>
     </div>
   </ion-card>
 </ion-content>

@@ -13,7 +13,7 @@ import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 export class MisPendientesPage implements OnInit {
 
   infoUsuario:any;
-  listaSolicitudes:any;
+  listaInfoSolicitudes:any;
   isLoad:boolean = false;
 
   constructor(private solicitudes : SolicitudesService,
@@ -31,11 +31,11 @@ export class MisPendientesPage implements OnInit {
   }
 
   async listaMisPendiente(){
-    let result = await this.solicitudes.listaMisPendientes(this.infoUsuario.value.Pusuario,"1");
+    let result = await this.solicitudes.listaSolicitudes(this.infoUsuario.value.Pusuario,"1");
     this.isLoad = true
     console.log("result lista mis pendientes",result);
-    this.listaSolicitudes = result['ListaParametros'];
-    console.log("this.listaSolicitudes",this.listaSolicitudes);
+    this.listaInfoSolicitudes = result['ListaParametros'];
+    console.log("this.listaSolicitudes",this.listaInfoSolicitudes);
   }
 
   async callInfoUsuario(){

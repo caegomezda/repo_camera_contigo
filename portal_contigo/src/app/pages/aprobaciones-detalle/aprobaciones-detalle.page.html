@@ -1,9 +1,9 @@
 <ion-header>
-  <ion-toolbar class="new-background-color">
+  <ion-toolbar class="new-background-color" *ngIf="isLoad">
     <ion-buttons slot="start">
-      <ion-back-button defaultHref="mis-pendientes" icon="arrow-back-outline" mode="md"></ion-back-button>
+      <ion-back-button defaultHref="aprobaciones" icon="arrow-back-outline" mode="md"></ion-back-button>
     </ion-buttons>
-    <ion-title>Detalle de la Solicitud</ion-title>
+    <ion-title>Radicado: {{aprobacionesDetalle.Codigo}} </ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -17,27 +17,28 @@
         <div *ngIf="isLoad">
 
           <ion-list>
+          <form (ngSubmit)="enviarAprobaciones()">
             <div align=left class="item-solicitud"> 
               <ion-label>
-                Tipo de Solicitud:
+                Numero Radicado:
               </ion-label>
             </div>
             <ion-card>
               <div align=left class="texto-solicitud" > 
                 <ion-label>
-                  {{solicitudDetalle.TipoSolicitud}}
+                  {{aprobacionesDetalle.Codigo}}
                 </ion-label>
               </div>
             </ion-card>
             <div align=left class="item-solicitud"> 
               <ion-label>
-                Funcionario Asignado:
+                Usuario Solicitud:
               </ion-label>
             </div>
             <ion-card>
               <div align=left class="texto-solicitud" > 
                 <ion-label>
-                  {{solicitudDetalle.UAsignado}}
+                  {{aprobacionesDetalle.USolicitud}}
                 </ion-label>
               </div>
             </ion-card>
@@ -49,31 +50,39 @@
             <ion-card>
               <div align=left class="texto-solicitud" > 
                 <ion-label>
-                  {{solicitudDetalle.DespEntrada}}
+                  {{aprobacionesDetalle.DespEntrada}}
                 </ion-label>
               </div>
             </ion-card>
+            
+            <div align=left class="item-solicitud"> 
+              <ion-label>
+                Estado:
+              </ion-label>
+            </div>
+            <ion-card>
+              <div>
+                <ion-select #aprobForm.Estado>
+                  <ion-select-option *ngFor="let parametros of listadoEstadosParametrosArreglo" value="{{parametros}}">{{parametros}}</ion-select-option>
+                </ion-select>
+              </div>
+            </ion-card>
+
             <div align=left class="item-solicitud"> 
               <ion-label>
                 Respuesta:
               </ion-label>
             </div>
             <ion-card>
-              <!-- <div align=left class="texto-solicitud" > 
-                <ion-label>
-                  aqui hay texto
-                </ion-label>
-              </div> -->
               <ion-item>
                 <ion-textarea
-                  disabled
-                  readonly
+                [ {ngModel}]="aprobForm.Respuesta"
                   value="">
                 </ion-textarea>
               </ion-item>
             </ion-card>
-
-              <ion-button class="item-solicitud-boton" expand="block" (click)="regresarAMisPendientes()">REGRESAR</ion-button>
+          </form>
+              <ion-button class="item-solicitud-boton" expand="block" (click)="enviarAprobaciones()">ENVIAR</ion-button>
           </ion-list>
 
         </div>

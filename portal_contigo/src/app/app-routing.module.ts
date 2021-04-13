@@ -58,6 +58,10 @@ const routes: Routes = [
     path: 'mis-pendientes-detalle',
     loadChildren: () => import('./pages/mis-pendientes-detalle/mis-pendientes-detalle.module').then( m => m.MisPendientesDetallePageModule)
   },
+  {
+    path: 'aprobaciones-detalle',
+    loadChildren: () => import('./pages/aprobaciones-detalle/aprobaciones-detalle.module').then( m => m.AprobacionesDetallePageModule)
+  },
 
 
 

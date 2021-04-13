@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { TemporalMovilStoreService } from '../../services/temporal-movil-store.service';
 
 @Component({
@@ -8,7 +9,9 @@ import { TemporalMovilStoreService } from '../../services/temporal-movil-store.s
 })
 export class MisPendientesDetallePage implements OnInit {
   solicitudDetalle:any
-  constructor(private storage: TemporalMovilStoreService) { }
+  isLoad = false
+  constructor(private storage: TemporalMovilStoreService,
+              private router: Router) { }
 
   ngOnInit() {
     console.log("mis pendientes detalle");
@@ -18,7 +21,14 @@ export class MisPendientesDetallePage implements OnInit {
   async getListSolicitudDetalle(){
     let result = await this.storage.sendInfoListSolicitudDetalle();
     this.solicitudDetalle = result
+    this.isLoad = true
     console.log("this.solicitudDetalle",this.solicitudDetalle);
+  }
+
+  regresarAMisPendientes(){
+    console.log("Mis Pendientes");
+    this.router.navigate(['/mis-pendientes']);
+    
   }
 
 }
