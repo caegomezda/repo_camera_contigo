@@ -17,7 +17,7 @@
       </ion-label>
     </ion-item>
 
-    <div *ngIf="isLoad"  class="ion-padding">
+    <div *ngIf="isLoad">
       <div #estediv *ngFor="let solicitudes of listaInfoAprobaciones" lines="full" class="new-background-color-div-aprobaciones" (click)="aprobacionesDetalle(solicitudes)">  
 
         <ion-grid fixed>

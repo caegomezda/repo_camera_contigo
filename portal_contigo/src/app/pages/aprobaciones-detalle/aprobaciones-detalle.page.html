@@ -17,31 +17,33 @@
         <div *ngIf="isLoad">
 
           <ion-list>
-          <form (ngSubmit)="enviarAprobaciones()">
-            <div align=left class="item-solicitud"> 
-              <ion-label>
-                Numero Radicado:
-              </ion-label>
-            </div>
-            <ion-card>
+            <form (ngSubmit)="enviarAprobaciones()">
+              <div align=left class="item-solicitud"> 
+                <ion-label>
+                  Numero Radicado:
+                </ion-label>
+              </div>
+              <ion-card>
               <div align=left class="texto-solicitud" > 
                 <ion-label>
                   {{aprobacionesDetalle.Codigo}}
                 </ion-label>
               </div>
             </ion-card>
+
             <div align=left class="item-solicitud"> 
               <ion-label>
                 Usuario Solicitud:
               </ion-label>
             </div>
             <ion-card>
-              <div align=left class="texto-solicitud" > 
+            <div align=left class="texto-solicitud" > 
                 <ion-label>
                   {{aprobacionesDetalle.USolicitud}}
                 </ion-label>
               </div>
             </ion-card>
+            
             <div align=left class="item-solicitud"> 
               <ion-label>
                 Descripcion:
@@ -62,7 +64,20 @@
             </div>
             <ion-card>
               <div>
-                <ion-select [(ngModel)]="aprobForm.Estado" name="Estado"  [value]=" ">
+                <ion-select #c [(ngModel)]="aprobForm.Estado" name="Estado" (ionChange)="changeEstadoListener(c.value)" [value]=" ">
+                  <ion-select-option *ngFor="let parametros of listadoEstadosParametrosArreglo" value="{{parametros}}">{{parametros}}</ion-select-option>
+                </ion-select>
+              </div>
+            </ion-card>
+
+            <ion-card *ngIf="isEstadoRedireccionar">
+              <div>
+                <div align=left class="item-solicitud"> 
+                  <ion-label>
+                    Redireccionar:
+                  </ion-label>
+                </div>
+                <ion-select [(ngModel)]="aprobForm.Redireccionar" name="Estado"  [value]=" ">
                   <ion-select-option *ngFor="let parametros of listadoEstadosParametrosArreglo" value="{{parametros}}">{{parametros}}</ion-select-option>
                 </ion-select>
               </div>

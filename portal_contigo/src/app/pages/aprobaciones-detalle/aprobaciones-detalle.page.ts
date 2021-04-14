@@ -4,6 +4,7 @@ import { TemporalMovilStoreService } from 'src/app/services/temporal-movil-store
 import { ParametrosService } from 'src/app/services/parametros.service';
 import { FormBuilder, FormControl, FormGroup,Validators } from '@angular/forms';
 import { AlertController, LoadingController } from '@ionic/angular';
+import { GestionadoService } from 'src/app/services/gestionado.service';
 
 
 @Component({
@@ -12,35 +13,38 @@ import { AlertController, LoadingController } from '@ionic/angular';
   styleUrls: ['./aprobaciones-detalle.page.scss'],
 })
 export class AprobacionesDetallePage implements OnInit {
+
   aprobacionesDetalle:any
   listadoEstadosParametros:any
   listadoEstadosParametrosArreglo:any
   isLoad = false
+  isEstadoRedireccionar = false
   infoUsuario:any
   aprobForm = {
-    Estado:"",
+    Estado:"empty",
     Respuesta:"",
     Tipo:"",
     Pusuario:"",
-    Codigo:""
+    Codigo:"",
+    Redireccionar:"empty"
   }
-
 
   constructor(private storage: TemporalMovilStoreService,
               private router: Router,
               private parametros: ParametrosService,
-              private fb:FormBuilder,
-              private loadingController: LoadingController,
               private alertController : AlertController,
+              private gestionada : GestionadoService,
   ){}
 
   ngOnInit() {
-    console.log("mis pendientes detalle");
+    console.log("mis aprobaciones detalle");
   }
   
   ionViewWillEnter(){
     this.getListAprobacionesDetalle()
-    this.aprobForm.Estado = "empty"
+    // this.aprobForm.Estado = "empty"
+    // this.aprobForm.Redireccionar = "empty"
+
   }
 
   async getListAprobacionesDetalle(){
@@ -48,63 +52,53 @@ export class AprobacionesDetallePage implements OnInit {
     let result = await this.storage.sendInfoListAprobacionesDetalle();
     let resultParametros = await this.parametros.listaParametros("1");
     this.listadoEstadosParametros = resultParametros['ListaParametros'];
-
     for (let index = 0; index < this.listadoEstadosParametros.length; index++) {
       this.listadoEstadosParametrosArreglo.push(this.listadoEstadosParametros[index]['Nombre'])
     }
-
     this.aprobacionesDetalle = result;
     this.isLoad = true;
-    // console.log("listadoEstadosParametrosArreglo",this.listadoEstadosParametrosArreglo)
-    // console.log("this.listadoEstadosParametros",this.listadoEstadosParametros)
-    // console.log("this.aprobacionesDetalle",this.aprobacionesDetalle);
   }
 
   async enviarAprobaciones(){
-    this.formMaker();
-    console.log("this.aprobForm",this.aprobForm)
-
-    console.log("this.aprobForm['Estado']",this.aprobForm.Estado)
-
+    await this.formMaker();
     if(this.aprobForm.Estado === "empty"){
-      console.log("dentro del If")
-      console.log("saliendo del loading")
-      this.alertMeController("reject")
-
+      this.alertMeController("reject_Estado")
+    }else if(this.aprobForm.Estado === "REDIRECCIONADO" && this.aprobForm.Redireccionar === "empty"){
+      this.alertMeController("reject_Redirect")
     }else{
-      console.log("dentro del else")
-      console.log('Loading dismissed!');
       this.aprobForm['Tipo'] ="2";
-      this.aprobForm['Pusuario'] =this.infoUsuario;
+      this.aprobForm['Pusuario'] = this.infoUsuario;
       this.aprobForm['Codigo'] =this.aprobacionesDetalle.Codigo;
-      console.log("this.aprobacionesForm",this.aprobForm);
+      this.gestionada.enviarGestionar(this.aprobForm);
       this.alertMeController("succes")
-
-      // this.router.navigate(['/aprobaciones']);
-
     }
   }
 
   async formMaker(){
     let result= await this.storage.sendInfoUsuario();
     this.infoUsuario = result[1].value.Pusuario
-    // console.log("this.infoUsuario",this.infoUsuario);
   }
 
   async alertMeController(estado){
-    console.log("entrado al alert")
-    if (estado === "reject") {
+    if (estado === "reject_Estado") {
       const alert = await this.alertController.create({
-        // header: 'Alert',
         subHeader: 'Por favor seleccione el campo Estado',
         message: 'Agregue la opcion Estado en el formulario',
         buttons: ['OK']
       });
   
       await alert.present();
-    }else if(estado ==="succes"){
+    }else if(estado === "reject_Redirect"){
       const alert = await this.alertController.create({
-        // header: 'Alert',
+        subHeader: 'Por favor seleccione el campo Redireccionar',
+        message: 'Agregue la la iocuion de redireccionamiento  en el formulario',
+        buttons: ['OK']
+      });
+  
+      await alert.present();
+    }
+    else if(estado ==="succes"){
+      const alert = await this.alertController.create({
         subHeader: 'Solicitud Gestionada',
         message: '',
         buttons: [
@@ -116,10 +110,19 @@ export class AprobacionesDetallePage implements OnInit {
           }
         ]
       });
-  
       await alert.present();
     }
-
   }
 
+  changeEstadoListener(value){
+    console.log("value",value)
+    console.log("parametros",value)
+    this.aprobForm['Redireccionar'] = value
+
+    if(value === "REDIRECCIONADO"){
+      this.isEstadoRedireccionar = true
+    }else{
+      this.isEstadoRedireccionar = false
+    }
+  }
 }
