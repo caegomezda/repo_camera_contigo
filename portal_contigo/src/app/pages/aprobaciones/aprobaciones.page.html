@@ -5,18 +5,19 @@
       <ion-back-button defaultHref="menu" icon="arrow-back-outline" mode="md"></ion-back-button>
     </ion-buttons>
 
-    <ion-title>aprobaciones</ion-title>
+    <ion-title>Aprobaciones</ion-title>
   </ion-toolbar>
-</ion-header>
 
-<ion-content>
-  <ion-card >
-    <ion-item lines="full" >
+      <ion-item lines="full" >
       <ion-label align=center>
         <font size="2" class="whiteSpaceClass">Pendiente por aprobaciones</font>
       </ion-label>
     </ion-item>
 
+</ion-header>
+
+<ion-content>
+  <ion-card >
     <div *ngIf="isLoad">
       <div #estediv *ngFor="let solicitudes of listaInfoAprobaciones" lines="full" class="new-background-color-div-aprobaciones" (click)="aprobacionesDetalle(solicitudes)">  
 

@@ -5,28 +5,24 @@
       <ion-back-button defaultHref="menu" icon="arrow-back-outline" mode="md"></ion-back-button>
     </ion-buttons>
 
-    <ion-title>Lista de Solicitudes</ion-title>
+    <ion-title>Mis Pendientes</ion-title>
   </ion-toolbar>
+
+  <ion-item lines="none" >
+    <ion-label align=center>
+      <font size="2">Lista de solicitudes pendientes</font>
+    </ion-label>
+  </ion-item>
+
 </ion-header>
 
 <ion-content>
   <ion-card>
-    <ion-item lines="none" >
-      <ion-label align=center>
-        <font size="2">Lista de solicitudes pendientes</font>
-      </ion-label>
-    </ion-item>
+
     <div align=center >
-      <!-- <textarea name="ListaDeSolicitudesPendientes" id="" cols="30" rows="10">
-      </textarea> -->
         <div *ngIf="isLoad">
 
           <ion-item *ngFor="let solicitudes of listaInfoSolicitudes" lines="full">
-            <!-- <ion-row>
-              <p>{{solicitudes.Codigo}}</p>
-              <p>{{solicitudes.Fecha}}</p>
-              <h1>{{solicitudes.TipoSolicitud}}</h1>
-            </ion-row> -->
 
             <ion-label (click)="onClickItem(solicitudes)">
               <h2 class="text">
@@ -38,11 +34,11 @@
                 {{solicitudes.TipoSolicitud}}
               </h3>
             </ion-label>
+
           </ion-item>
+
         </div>
-
-
-
     </div>
+    
   </ion-card>
 </ion-content>
