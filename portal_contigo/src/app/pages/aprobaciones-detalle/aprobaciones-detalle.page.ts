@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { TemporalMovilStoreService } from 'src/app/services/temporal-movil-store.service';
 import { ParametrosService } from 'src/app/services/parametros.service';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup,Validators } from '@angular/forms';
+import { AlertController, LoadingController } from '@ionic/angular';
 
 
 @Component({
@@ -16,16 +17,30 @@ export class AprobacionesDetallePage implements OnInit {
   listadoEstadosParametrosArreglo:any
   isLoad = false
   infoUsuario:any
-  aprobForm = {}
+  aprobForm = {
+    Estado:"",
+    Respuesta:"",
+    Tipo:"",
+    Pusuario:"",
+    Codigo:""
+  }
 
 
   constructor(private storage: TemporalMovilStoreService,
               private router: Router,
-              private parametros: ParametrosService) { }
+              private parametros: ParametrosService,
+              private fb:FormBuilder,
+              private loadingController: LoadingController,
+              private alertController : AlertController,
+  ){}
 
   ngOnInit() {
     console.log("mis pendientes detalle");
+  }
+  
+  ionViewWillEnter(){
     this.getListAprobacionesDetalle()
+    this.aprobForm.Estado = "empty"
   }
 
   async getListAprobacionesDetalle(){
@@ -40,31 +55,71 @@ export class AprobacionesDetallePage implements OnInit {
 
     this.aprobacionesDetalle = result;
     this.isLoad = true;
-    console.log("listadoEstadosParametrosArreglo",this.listadoEstadosParametrosArreglo)
-    console.log("this.listadoEstadosParametros",this.listadoEstadosParametros)
-    console.log("this.aprobacionesDetalle",this.aprobacionesDetalle);
+    // console.log("listadoEstadosParametrosArreglo",this.listadoEstadosParametrosArreglo)
+    // console.log("this.listadoEstadosParametros",this.listadoEstadosParametros)
+    // console.log("this.aprobacionesDetalle",this.aprobacionesDetalle);
   }
 
-  enviarAprobaciones(){
+  async enviarAprobaciones(){
     this.formMaker();
-    console.log("Aprobaciones envida");
+    console.log("this.aprobForm",this.aprobForm)
 
-    this.aprobForm['Tipo'] ="2";
-    this.aprobForm['Pusuario'] =this.infoUsuario;
-    this.aprobForm['Codigo'] =this.aprobacionesDetalle.Codigo;
+    console.log("this.aprobForm['Estado']",this.aprobForm.Estado)
 
-    // this.Tipo = "2"
-    // let Tipo = new FormControl('2');
-    // let Ppusuario = new FormControl(this.infoUsuario);
-    // let Codigo = new FormControl(this.aprobacionesDetalle.Codigo);
-    console.log("form ___________:",this.aprobForm)
-    console.log("this.aprobacionesForm",this.aprobForm)
+    if(this.aprobForm.Estado === "empty"){
+      console.log("dentro del If")
+      console.log("saliendo del loading")
+      this.alertMeController("reject")
+
+    }else{
+      console.log("dentro del else")
+      console.log('Loading dismissed!');
+      this.aprobForm['Tipo'] ="2";
+      this.aprobForm['Pusuario'] =this.infoUsuario;
+      this.aprobForm['Codigo'] =this.aprobacionesDetalle.Codigo;
+      console.log("this.aprobacionesForm",this.aprobForm);
+      this.alertMeController("succes")
+
+      // this.router.navigate(['/aprobaciones']);
+
+    }
   }
 
   async formMaker(){
     let result= await this.storage.sendInfoUsuario();
-    this.infoUsuario = result[1]
-    console.log("this.infoUsuario",this.infoUsuario);
-    
+    this.infoUsuario = result[1].value.Pusuario
+    // console.log("this.infoUsuario",this.infoUsuario);
   }
+
+  async alertMeController(estado){
+    console.log("entrado al alert")
+    if (estado === "reject") {
+      const alert = await this.alertController.create({
+        // header: 'Alert',
+        subHeader: 'Por favor seleccione el campo Estado',
+        message: 'Agregue la opcion Estado en el formulario',
+        buttons: ['OK']
+      });
+  
+      await alert.present();
+    }else if(estado ==="succes"){
+      const alert = await this.alertController.create({
+        // header: 'Alert',
+        subHeader: 'Solicitud Gestionada',
+        message: '',
+        buttons: [
+          {
+            text: 'OK',
+            handler: () => {
+              this.router.navigate(['/aprobaciones']);
+            }
+          }
+        ]
+      });
+  
+      await alert.present();
+    }
+
+  }
+
 }

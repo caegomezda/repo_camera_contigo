@@ -62,7 +62,7 @@
             </div>
             <ion-card>
               <div>
-                <ion-select #aprobForm.Estado>
+                <ion-select [(ngModel)]="aprobForm.Estado" name="Estado"  [value]=" ">
                   <ion-select-option *ngFor="let parametros of listadoEstadosParametrosArreglo" value="{{parametros}}">{{parametros}}</ion-select-option>
                 </ion-select>
               </div>
@@ -76,7 +76,8 @@
             <ion-card>
               <ion-item>
                 <ion-textarea
-                [ {ngModel}]="aprobForm.Respuesta"
+                  name="Respuesta"
+                  [(ngModel)]="aprobForm.Respuesta"
                   value="">
                 </ion-textarea>
               </ion-item>

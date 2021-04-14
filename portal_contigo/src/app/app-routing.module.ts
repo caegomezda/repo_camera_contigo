@@ -50,7 +50,8 @@ const routes: Routes = [
   {
     path: 'aprobaciones',
     loadChildren: () => import('./pages/aprobaciones/aprobaciones.module').then( m => m.AprobacionesPageModule)
-  },  {
+  },
+  {
     path: 'componente-auxilio-convencional',
     loadChildren: () => import('./pages/componente-auxilio-convencional/componente-auxilio-convencional.module').then( m => m.ComponenteAuxilioConvencionalPageModule)
   },
