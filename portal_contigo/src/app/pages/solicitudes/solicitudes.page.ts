@@ -26,6 +26,7 @@ export class SolicitudesPage implements OnInit {
   }
   vacaciones(){
     console.log("vacaciones");
+    this.router.navigate(['/vacaciones']);
   }
   cesantias(){
     console.log("cesantias");

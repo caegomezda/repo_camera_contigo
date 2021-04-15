@@ -62,7 +62,11 @@ const routes: Routes = [
   {
     path: 'aprobaciones-detalle',
     loadChildren: () => import('./pages/aprobaciones-detalle/aprobaciones-detalle.module').then( m => m.AprobacionesDetallePageModule)
+  },  {
+    path: 'vacaciones',
+    loadChildren: () => import('./pages/vacaciones/vacaciones.module').then( m => m.VacacionesPageModule)
   },
+
 
 
 

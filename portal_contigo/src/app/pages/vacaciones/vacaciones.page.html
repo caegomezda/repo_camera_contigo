@@ -1,0 +1,105 @@
+<ion-header>
+  <ion-toolbar class="new-background-color">
+    <ion-buttons slot="start" class="new-background-color">
+      <ion-back-button defaultHref="mis-pendientes" icon="arrow-back-outline" mode="md"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Vacaciones</ion-title>
+  </ion-toolbar>
+<!-- 
+  <ion-item lines="none" >
+    <ion-label align=center>
+      <font size="2">Lista de solicitudes pendientes</font>
+    </ion-label>
+  </ion-item> -->
+</ion-header>
+
+<ion-content>
+  <div align=center >
+    <div>
+
+      <ion-list>
+        <div aling=center class="item-solicitud"> 
+          <ion-label>
+            Días disponible:
+          </ion-label>
+        </div>
+        <ion-card>
+          <div aling=center class="texto-solicitud" > 
+            <ion-label>
+              total dias
+            </ion-label>
+          </div>
+        </ion-card>
+
+        <div aling=center class="item-solicitud"> 
+          <ion-label>
+            Días a tomar:
+          </ion-label>
+        </div>
+        <ion-card>
+          <div aling=center class="texto-solicitud" > 
+            <ion-label>
+              Aqui días a tomar
+            </ion-label>
+          </div>
+        </ion-card>
+
+        <div aling=center class="item-solicitud"> 
+          <ion-label>
+            Fecha de inicio:
+          </ion-label>
+        </div>
+        <ion-card>
+          <div aling=center class="texto-solicitud" > 
+            <ion-label>
+              Aqui fecha de inicio
+            </ion-label>
+          </div>
+        </ion-card>
+
+          <ion-card >
+            <ion-list class="new-background-color-div-aprobaciones">
+              <ion-card class="item-solicitud">
+                <ion-label class="texto-solicitud-dos">
+                  Aqui va texto 1 Aqui va texto 1
+                </ion-label>
+              </ion-card>
+              <ion-card class="item-solicitud">
+                <ion-label class="texto-solicitud-dos">
+                  Aqui va texto 2 
+                </ion-label>
+              </ion-card>
+              <ion-card class="item-solicitud">
+                <ion-label class="texto-solicitud-dos">
+                  Aqui va texto 3 Aqui va texto 3
+                </ion-label>
+              </ion-card>
+              <ion-card class="item-solicitud">
+                <ion-label class="texto-solicitud-dos">
+                  Aqui va texto 4 
+                </ion-label>
+              </ion-card>
+              <ion-card class="item-solicitud">
+                <ion-label class="texto-solicitud-dos">
+                  Aqui va texto 5 Aqui va texto 5
+                </ion-label>
+              </ion-card>
+              <ion-card class="item-solicitud">
+                <ion-label class="texto-solicitud-dos">
+                  Aqui va texto 6 
+                </ion-label>
+              </ion-card>
+              <ion-card class="item-solicitud">
+                <ion-label class="texto-solicitud-dos">
+                  Aqui va texto 7 Aqui va texto 7
+                </ion-label>
+              </ion-card>
+            </ion-list>
+          </ion-card>
+
+        <ion-button color="medium" class="item-solicitud-boton" expand="block" (click)="eviarSolicitudVacaciones()">EVIAR SOLICITUD</ion-button>
+      </ion-list>
+      
+    </div>
+  </div>
+</ion-content>
