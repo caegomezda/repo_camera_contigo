@@ -8,6 +8,7 @@ export class TemporalMovilStoreService {
   solicitudDetalle:any;
   aprobacionDetalle:any;
   nombreSolicitud:any;
+  d = new Date();
   constructor() { }
 
   ngOnInit(){
@@ -48,6 +49,21 @@ export class TemporalMovilStoreService {
 
   sendNombresolicitud(){
     return this.nombreSolicitud
+  }
+
+  fechaHoy(Ndias){
+    let dd = this.d.getDate() + Ndias;
+    let mm = this.d.getMonth() + 1;
+    let yy = this.d.getFullYear();
+    let myDateString = yy + "-" + mm + "-" +dd + "T00:00:00-01:00";
+    if (dd<10) {
+      myDateString = yy + "-" + mm + "-" + "0" +dd + "T00:00:00-01:00";
+    } else if (mm<10) {
+      myDateString = yy + "-" + "0" + mm + "-"+dd + "T00:00:00-01:00";
+    }else if(dd<10 && mm<10){
+      myDateString = yy + "-" +"0"+ mm + "-" + "0" +dd + "T00:00:00-01:00";
+    }
+    return myDateString
   }
 
 }

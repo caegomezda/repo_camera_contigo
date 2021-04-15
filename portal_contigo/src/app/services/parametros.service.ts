@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import {map} from 'rxjs/operators';
+import { environment } from 'src/environments/environment';
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class ParametrosService {
-
+  private url = environment.URL;
   public httpOptions:any;
 
   constructor(public http:HttpClient) {
@@ -18,7 +19,7 @@ export class ParametrosService {
     let newForm = {
       Tipo: Tipo
     }
-    const apiUrl = `http://contigo.etex.com.co/movil/svc_parametros.php`;
+    const apiUrl = `${this.url}/movil/svc_parametros.php`;
     
     let json = newForm
     

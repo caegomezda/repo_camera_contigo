@@ -15,88 +15,100 @@
 
 <ion-content>
   <div align=center >
-    <div>
-
+    <div *ngIf="isLoad">
       <ion-list>
-        <div aling=center class="item-solicitud"> 
-          <ion-label>
-            Días disponible:
-          </ion-label>
-        </div>
-        <ion-card>
-          <div aling=center class="texto-solicitud" > 
+        <form (ngSubmit)="onSubmit()">
+
+          <div aling=center class="item-solicitud"> 
             <ion-label>
-              total dias
+              Días disponible:
             </ion-label>
           </div>
-        </ion-card>
-
-        <div aling=center class="item-solicitud"> 
-          <ion-label>
-            Días a tomar:
-          </ion-label>
-        </div>
-        <ion-card>
-          <div aling=center class="texto-solicitud" > 
+          <ion-card>
+            <div aling=center class="texto-solicitud" > 
+              <ion-label>
+                {{listaInfoVacaciones.CantDias}}
+              </ion-label>
+            </div>
+          </ion-card>
+          
+          <div aling=center class="item-solicitud"> 
             <ion-label>
-              Aqui días a tomar
+              Días a tomar:
             </ion-label>
           </div>
-        </ion-card>
-
-        <div aling=center class="item-solicitud"> 
-          <ion-label>
-            Fecha de inicio:
-          </ion-label>
-        </div>
-        <ion-card>
-          <div aling=center class="texto-solicitud" > 
+          <ion-card>
+            <div aling=center class="texto-solicitud" > 
+              <ion-input [(ngModel)]="aprobForm.DiaSolicitud" name="DiaSolicitud" type="number"></ion-input>
+            </div>
+          </ion-card>
+          
+          <div aling=center class="item-solicitud"> 
             <ion-label>
-              Aqui fecha de inicio
+              Fecha de inicio:
             </ion-label>
           </div>
-        </ion-card>
-
+          <ion-card>
+            <div aling=center class="texto-solicitud" > 
+              <!-- <ion-label>
+                Aqui fecha de inicio
+              </ion-label> -->
+              <div *ngIf="isDateLoad"> 
+                <ion-label position="floating"></ion-label>
+                <ion-datetime [(ngModel)]="aprobForm.FechaSolicitud" name="FechaSolicitud" displayFormat="DD/MM/YYYY" min="{{fechaInfo}}" max="2100" placeholder="{{fechaInfo}}" ></ion-datetime>
+              </div>
+            </div>
+          </ion-card>
+          
           <ion-card >
             <ion-list class="new-background-color-div-aprobaciones">
               <ion-card class="item-solicitud">
                 <ion-label class="texto-solicitud-dos">
-                  Aqui va texto 1 Aqui va texto 1
+                  {{listaInfoVacaciones.Encabezado}}
                 </ion-label>
               </ion-card>
               <ion-card class="item-solicitud">
                 <ion-label class="texto-solicitud-dos">
-                  Aqui va texto 2 
+                  {{listaInfoVacaciones.Periodo1}}
+                  <div style = "visibility: hidden">" "</div>
+                  
                 </ion-label>
               </ion-card>
               <ion-card class="item-solicitud">
                 <ion-label class="texto-solicitud-dos">
-                  Aqui va texto 3 Aqui va texto 3
+                  {{listaInfoVacaciones.Periodo2}}
+                  <div style = "visibility: hidden">" "</div>
                 </ion-label>
               </ion-card>
               <ion-card class="item-solicitud">
                 <ion-label class="texto-solicitud-dos">
-                  Aqui va texto 4 
+                  {{listaInfoVacaciones.Periodo3}}
+                  <div style = "visibility: hidden">" "</div>
                 </ion-label>
               </ion-card>
               <ion-card class="item-solicitud">
                 <ion-label class="texto-solicitud-dos">
-                  Aqui va texto 5 Aqui va texto 5
+                  {{listaInfoVacaciones.Periodo4}}
+                  <div style = "visibility: hidden">" "</div>
                 </ion-label>
               </ion-card>
               <ion-card class="item-solicitud">
-                <ion-label class="texto-solicitud-dos">
-                  Aqui va texto 6 
-                </ion-label>
+                <ion-text>
+                  <ion-label class="texto-solicitud-dos">
+                    {{listaInfoVacaciones.Periodo5}}
+                    <div style = "visibility: hidden">" "</div>
+                  </ion-label>
+                </ion-text>
               </ion-card>
               <ion-card class="item-solicitud">
                 <ion-label class="texto-solicitud-dos">
-                  Aqui va texto 7 Aqui va texto 7
+                  DIAS SOLICITADOS {{listaInfoVacaciones.DiasSolicitados}}
                 </ion-label>
               </ion-card>
             </ion-list>
           </ion-card>
-
+        </form>
+          
         <ion-button shape="round" color="medium" class="item-solicitud-boton" expand="block" (click)="eviarSolicitudVacaciones()">EVIAR SOLICITUD</ion-button>
       </ion-list>
       

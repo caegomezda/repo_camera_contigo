@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {map} from 'rxjs/operators';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +9,7 @@ import {map} from 'rxjs/operators';
 export class SolicitudesService {
 
   public httpOptions:any;
-
+  private url = environment.URL;
   constructor(public http:HttpClient) {
     this.httpOptions = { headers: new HttpHeaders({ 'Content-Type':  'application/json'}) };
    }
@@ -18,7 +19,7 @@ export class SolicitudesService {
       Pusuario: Pusuario,
       Tipo: Tipo
     }
-    const apiUrl = `http://contigo.etex.com.co/movil/svc_solicitudes.php`;
+    const apiUrl = `${this.url}/svc_solicitudes.php`;
     
     let json = newForm
     
