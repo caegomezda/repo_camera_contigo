@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { TemporalMovilStoreService } from 'src/app/services/temporal-movil-store.service';
+import { VacacionesService } from 'src/app/services/vacaciones.service';
 
 @Component({
   selector: 'app-vacaciones',
@@ -6,15 +8,32 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./vacaciones.page.scss'],
 })
 export class VacacionesPage implements OnInit {
-  aprobForm = {
+  aprobForm ={
+
   }
-  constructor() { }
+  infoUsuario:any;
+  listaInfoVacaciones:any;
+  constructor(private storage : TemporalMovilStoreService,
+              private vacaciones :VacacionesService) { }
 
   ngOnInit() {
   }
 
+  ionViewWillEnter(){
+    this.listaInfoVacaciones();
+  }
+
+  async listaVacaciones(){
+    await this.formMaker();
+
+    let result = await this.vacaciones.listaVacaciones(this.infoUsuario,"1");
+    this.listaInfoVacaciones = result;
+    console.log("this.listaInfoVacaciones",this.listaInfoVacaciones)
+
+  }
+
   async eviarSolicitudVacaciones(){
-    // await this.formMaker();
+    await this.formMaker();
     // if(this.aprobForm.Estado === "empty"){
     //   this.alertMeController("reject_Estado")
     // }else if(this.aprobForm.Estado === "REDIRECCIONADO" && this.aprobForm.Redireccionar === "empty"){
@@ -29,8 +48,8 @@ export class VacacionesPage implements OnInit {
   }
 
   async formMaker(){
-    // let result= await this.storage.sendInfoUsuario();
-    // this.infoUsuario = result[1].value.Pusuario
+    let result= await this.storage.sendInfoUsuario();
+    this.infoUsuario = result[1].value.Pusuario
   }
 
   async alertMeController(estado){

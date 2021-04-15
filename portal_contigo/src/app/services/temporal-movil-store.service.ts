@@ -7,6 +7,7 @@ export class TemporalMovilStoreService {
   infoUsuario:any;
   solicitudDetalle:any;
   aprobacionDetalle:any;
+  nombreSolicitud:any;
   constructor() { }
 
   ngOnInit(){
@@ -39,6 +40,14 @@ export class TemporalMovilStoreService {
 
   sendInfoListAprobacionesDetalle(){
     return this.aprobacionDetalle;
+  }
+
+  getNombreSolicitud(nombreSolicitud){
+    this.nombreSolicitud = nombreSolicitud
+  }
+
+  sendNombresolicitud(){
+    return this.nombreSolicitud
   }
 
 }

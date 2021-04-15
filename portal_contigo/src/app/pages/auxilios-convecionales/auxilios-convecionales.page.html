@@ -3,19 +3,21 @@
     <ion-buttons slot="start" class="new-background-color">
       <ion-back-button defaultHref="solicitudes" icon="arrow-back-outline" mode="md"></ion-back-button>
     </ion-buttons>
-    <ion-title>Auxilios-convecionales</ion-title>
+    <ion-title>Auxilios Convecionales</ion-title>
   </ion-toolbar>
   <ion-item lines="full" >
     <ion-label align=center>
-      <font size="2" class="whiteSpaceClass">Ingrese a informacion en los campos</font>
+      <font size="2" class="whiteSpaceClass">Ingrese La informacion en los campos</font>
     </ion-label>
   </ion-item>
 </ion-header>
 
 <ion-content>
 
-  <ion-button class="item-solicitud" color="medium" (click)="verRequsitos()" expand="block"  shape="round">
-    VER REQUSITOS
+  <ion-button class="item-solicitud-boton" color="medium" (click)="verRequsitos()" expand="block"  shape="round">
+    <ion-label>
+      VER REQUSITOS
+    </ion-label>
   </ion-button>
 
   <div align=left class="item-solicitud"> 
@@ -26,8 +28,7 @@
   <ion-card>
     <div>
       <!-- <ion-select #c [(ngModel)]="aprobForm.Estado" name="Estado" (ionChange)="changeEstadoListener(c.value)" [value]=" "> -->
-      <ion-select >
-
+      <ion-select placeholder="Seleccione...">>
         <!-- <ion-select-option *ngFor="let parametros of listadoEstadosParametrosArreglo" value="{{parametros}}">{{parametros}}</ion-select-option> -->
         <ion-select-option >datos</ion-select-option>
         <ion-select-option >datos</ion-select-option>
@@ -58,9 +59,12 @@
       Resgitro Fotográfico:
     </ion-label>
   </div>
-  <div (click)="tomarFoto()">
-    <ion-card>
-      <ion-icon name="camera-outline"></ion-icon>  
+  <div   >
+    <ion-card align=center>
+      <img  (click)="tomarFoto()" src="../../../assets/imagenes/camara.png" alt="">
     </ion-card>
   </div>
+  <ion-button class="item-solicitud-boton" color="medium" (click)="enviarAuxConvencionales()" expand="block" shape="round">ENVIAR</ion-button>
+
+
 </ion-content>
