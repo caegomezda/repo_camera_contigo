@@ -18,16 +18,19 @@ export class SolicitudesPage implements OnInit {
 
   auxiliosConvencionales(){
     console.log("auxiliosConvencionales");
-      this.router.navigate(['/componente-auxilio-convencional']);
+      this.router.navigate(['/auxilios-convecionales']);
   }
 
   auxiliosEstudio(){
     console.log("auxiliosEstudio");
+    this.router.navigate(['/auxilios-estudio']);
   }
+
   vacaciones(){
     console.log("vacaciones");
     this.router.navigate(['/vacaciones']);
   }
+
   cesantias(){
     console.log("cesantias");
   }

@@ -52,19 +52,28 @@ const routes: Routes = [
     loadChildren: () => import('./pages/aprobaciones/aprobaciones.module').then( m => m.AprobacionesPageModule)
   },
   {
-    path: 'componente-auxilio-convencional',
-    loadChildren: () => import('./pages/componente-auxilio-convencional/componente-auxilio-convencional.module').then( m => m.ComponenteAuxilioConvencionalPageModule)
-  },
-  {
     path: 'mis-pendientes-detalle',
     loadChildren: () => import('./pages/mis-pendientes-detalle/mis-pendientes-detalle.module').then( m => m.MisPendientesDetallePageModule)
   },
   {
     path: 'aprobaciones-detalle',
     loadChildren: () => import('./pages/aprobaciones-detalle/aprobaciones-detalle.module').then( m => m.AprobacionesDetallePageModule)
-  },  {
+  },
+  {
     path: 'vacaciones',
     loadChildren: () => import('./pages/vacaciones/vacaciones.module').then( m => m.VacacionesPageModule)
+  },
+  {
+    path: 'auxilios-convecionales',
+    loadChildren: () => import('./pages/auxilios-convecionales/auxilios-convecionales.module').then( m => m.AuxiliosConvecionalesPageModule)
+  },
+  {
+    path: 'auxilios-estudio',
+    loadChildren: () => import('./pages/auxilios-estudio/auxilios-estudio.module').then( m => m.AuxiliosEstudioPageModule)
+  },
+  {
+    path: 'requesitos-solicitudes',
+    loadChildren: () => import('./pages/requesitos-solicitudes/requesitos-solicitudes.module').then( m => m.RequesitosSolicitudesPageModule)
   },
 
 
