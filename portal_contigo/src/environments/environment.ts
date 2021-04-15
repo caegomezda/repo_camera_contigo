@@ -3,6 +3,7 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
+  URL: "http://contigo.etex.com.co/movil",
   production: false
 };
 
