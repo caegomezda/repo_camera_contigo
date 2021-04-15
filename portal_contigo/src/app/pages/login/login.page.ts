@@ -39,15 +39,10 @@ export class LoginPage implements OnInit {
   }
 
   ngOnInit() {
-    console.log("LOGIN");
-    console.log('this.loginForm',this.loginForm.value);
   }
 
 
   async auntenticar(){
-    console.log("auntenticar");
-    console.log("form",this.loginForm.value)
-
     const loading = await this.loadingController.create({
       cssClass: 'my-custom-class',
       message: 'Autenticando...',
@@ -56,9 +51,6 @@ export class LoginPage implements OnInit {
 
     await loading.present();
     let result = await this.auth.login(this.loginForm.value);
-
-    console.log("result autenticar en login",result);
-
     this.storeUsuInfo.getInfoUsuario(result,this.loginForm);
     if (result['Estado'] === false) {
       await loading.onDidDismiss();
@@ -68,11 +60,9 @@ export class LoginPage implements OnInit {
         message: 'Error al auntenticar, revise su contraseña o su usuario',
         buttons: ['OK']
       });
-      console.log('Loading dismissed!');
       await alert.present();
     }else{
       await loading.onDidDismiss();
-      console.log('Loading dismissed!');
       this.router.navigate(['/menu']);
     }
   }

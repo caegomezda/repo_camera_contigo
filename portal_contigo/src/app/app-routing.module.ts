@@ -75,6 +75,22 @@ const routes: Routes = [
     path: 'requesitos-solicitudes',
     loadChildren: () => import('./pages/requesitos-solicitudes/requesitos-solicitudes.module').then( m => m.RequesitosSolicitudesPageModule)
   },
+  {
+    path: 'camara-page',
+    loadChildren: () => import('./pages/camara-page/camara-page.module').then( m => m.CamaraPagePageModule)
+  },
+  {
+    path: 'cesantias',
+    loadChildren: () => import('./pages/cesantias/cesantias.module').then( m => m.CesantiasPageModule)
+  },
+  {
+    path: 'cambio-beneficiario',
+    loadChildren: () => import('./pages/cambio-beneficiario/cambio-beneficiario.module').then( m => m.CambioBeneficiarioPageModule)
+  },
+  {
+    path: 'reporte-calamidad-incapacidad',
+    loadChildren: () => import('./pages/reporte-calamidad-incapacidad/reporte-calamidad-incapacidad.module').then( m => m.ReporteCalamidadIncapacidadPageModule)
+  },
 
 
 

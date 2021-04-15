@@ -16,19 +16,19 @@ export class AuxiliosConvecionalesPage implements OnInit {
   }
 
   tomarFoto(){
-    console.log("Tomar foto")
+    console.log("Tomar foto");
+    this.router.navigate(['/camara-page']);
   }
   verRequsitos(){
-    console.log("Ver requistos")
     this.sendNombresolicitud()
-    this.router.navigate(['/requesitos-solicitudes'])
+    this.router.navigate(['/requesitos-solicitudes']);
   }
 
   sendNombresolicitud(){
-  this.storage.getNombreSolicitud("Auxilios Convencionales")
+  this.storage.getNombreSolicitud("Auxilios Convencionales");
   }
 
   enviarAuxConvencionales(){
-    console.log("Enviar Informacion")
+    console.log("Enviar Informacion");
   }
 }

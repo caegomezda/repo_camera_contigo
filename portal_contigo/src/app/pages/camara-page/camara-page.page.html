@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar class="new-background-color">
+    <ion-buttons slot="start" >
+      <ion-back-button defaultHref="" icon="arrow-back-outline" mode="md"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Capturar Fotos {{nombreSolicitud}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-button class="item-solicitud-boton" color="medium" (click)="adjuntarFoto()" expand="block"  shape="round">
+    <ion-label>
+      ADJUNTAR FOTOS
+    </ion-label>
+  </ion-button>
+  <ion-row>
+    <ion-col size="8">
+
+      <ion-card>
+        <div>
+          <img src="" alt="">
+          <div style = "visibility: hidden" >" "</div>
+        </div>
+      </ion-card>
+    </ion-col>
+
+    <ion-col size="4">
+      <ion-card>
+        <ion-list>
+          <ion-button class="item-solicitud-boton" color="medium"  (click)="eliminarFotoEnLista()" expand="block" shape="round">
+            ELIMINAR
+          </ion-button>
+          <ion-button class="item-solicitud-boton" color="medium"  (click)="abrirCamara()" expand="block" shape="round">
+            ABRIR CAMARA
+          </ion-button>
+        </ion-list>
+      </ion-card>
+    </ion-col>
+
+  </ion-row>
+  <ion-card>
+    <ion-label>
+      <font size="2">En esta seccion puede ver la lista de todas las solicitudes</font>
+    </ion-label>
+    <div style = "visibility: hidden" >" "</div>
+ 
+  </ion-card>
+</ion-content>

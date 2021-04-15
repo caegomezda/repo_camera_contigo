@@ -5,6 +5,7 @@ import { ParametrosService } from 'src/app/services/parametros.service';
 import { FormBuilder, FormControl, FormGroup,Validators } from '@angular/forms';
 import { AlertController, LoadingController } from '@ionic/angular';
 import { GestionadoService } from 'src/app/services/gestionado.service';
+import { SolicitudesService } from 'src/app/services/solicitudes.service';
 
 
 @Component({
@@ -14,12 +15,13 @@ import { GestionadoService } from 'src/app/services/gestionado.service';
 })
 export class AprobacionesDetallePage implements OnInit {
 
-  aprobacionesDetalle:any
-  listadoEstadosParametros:any
-  listadoEstadosParametrosArreglo:any
-  isLoad = false
-  isEstadoRedireccionar = false
-  infoUsuario:any
+  aprobacionesDetalle:any;
+  listadoEstadosParametros:any;
+  listadoEstadosParametrosArreglo:any;
+  isLoad = false;
+  isEstadoRedireccionar = false;
+  infoUsuario:any;
+  listadoParametrosUsuarios:any;
   aprobForm = {
     Estado:"empty",
     Respuesta:"",
@@ -33,18 +35,14 @@ export class AprobacionesDetallePage implements OnInit {
               private router: Router,
               private parametros: ParametrosService,
               private alertController : AlertController,
-              private gestionada : GestionadoService,
+              private solicitudes : SolicitudesService,
   ){}
 
   ngOnInit() {
-    console.log("mis aprobaciones detalle");
   }
   
   ionViewWillEnter(){
     this.getListAprobacionesDetalle()
-    // this.aprobForm.Estado = "empty"
-    // this.aprobForm.Redireccionar = "empty"
-
   }
 
   async getListAprobacionesDetalle(){
@@ -66,10 +64,10 @@ export class AprobacionesDetallePage implements OnInit {
     }else if(this.aprobForm.Estado === "REDIRECCIONADO" && this.aprobForm.Redireccionar === "empty"){
       this.alertMeController("reject_Redirect")
     }else{
-      this.aprobForm['Tipo'] ="2";
+      this.aprobForm['Tipo'] ="3";
       this.aprobForm['Pusuario'] = this.infoUsuario;
       this.aprobForm['Codigo'] =this.aprobacionesDetalle.Codigo;
-      this.gestionada.enviarGestionar(this.aprobForm);
+      this.solicitudes.listaSolicitudes(this.aprobForm);
       this.alertMeController("succes")
     }
   }
@@ -114,12 +112,11 @@ export class AprobacionesDetallePage implements OnInit {
     }
   }
 
-  changeEstadoListener(value){
-    console.log("value",value)
-    console.log("parametros",value)
+  async changeEstadoListener(value){
     this.aprobForm['Redireccionar'] = value
-
     if(value === "REDIRECCIONADO"){
+      let resultParametrosUsuarios = await this.parametros.listaParametros("2");
+      this.listadoParametrosUsuarios = resultParametrosUsuarios['ListaParametros']
       this.isEstadoRedireccionar = true
     }else{
       this.isEstadoRedireccionar = false

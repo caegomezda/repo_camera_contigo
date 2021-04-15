@@ -19,7 +19,7 @@ export class ParametrosService {
     let newForm = {
       Tipo: Tipo
     }
-    const apiUrl = `${this.url}/movil/svc_parametros.php`;
+    const apiUrl = `${this.url}/svc_parametros.php`;
     
     let json = newForm
     

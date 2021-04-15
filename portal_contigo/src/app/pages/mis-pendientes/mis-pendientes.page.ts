@@ -31,7 +31,12 @@ export class MisPendientesPage implements OnInit {
   }
 
   async listaMisPendiente(){
-    let result = await this.solicitudes.listaSolicitudes(this.infoUsuario.value.Pusuario,"1");
+    let newForm = {
+      Pusuario : this.infoUsuario.value.Pusuario,
+      Tipo : "1"
+    }
+    
+    let result = await this.solicitudes.listaSolicitudes(newForm);
     this.isLoad = true
     console.log("result lista mis pendientes",result);
     this.listaInfoSolicitudes = result['ListaParametros'];

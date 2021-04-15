@@ -26,21 +26,21 @@ export class AprobacionesPage implements OnInit {
   }
 
   async ListaAprobaciones(){
-    let result = await this.solicitudes.listaSolicitudes(this.infoUsuario.value.Pusuario,"2");
+    let newForm = {
+      Pusuario: this.infoUsuario.value.Pusuario,
+      Tipo: "2"
+    }
+    let result = await this.solicitudes.listaSolicitudes(newForm);
     this.isLoad = true
-
     this.listaInfoAprobaciones = result['ListaParametros']
-    console.log("this.listaAprobaciones",this.listaInfoAprobaciones);
   }
 
   async callInfoUsuario(){
     let result = await this.storage.sendInfoUsuario();
-    console.log("result en call info Usuario",result[1]);
     this.infoUsuario = result[1];
   }
 
   aprobacionesDetalle(solicitudes){
-    console.log("Solicitudes",solicitudes);
     this.storage.getInfoListAprobacionesDetalle(solicitudes);
     this.router.navigate(['aprobaciones-detalle']);
 
