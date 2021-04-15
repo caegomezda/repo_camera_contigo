@@ -12,7 +12,7 @@ export class SolicitudesService {
   constructor(public http:HttpClient) {
     this.httpOptions = { headers: new HttpHeaders({ 'Content-Type':  'application/json'}) };
    }
-
+   //nota para estandarizar este metodo para las solicitudes, pues exiten varias que usan mismo metos pero y solo es agregarle el formulario, el cual puedo ser enviado con antelacion
   listaSolicitudes(Pusuario,Tipo){
     let newForm = {
       Pusuario: Pusuario,
