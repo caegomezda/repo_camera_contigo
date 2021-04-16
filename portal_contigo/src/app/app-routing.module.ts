@@ -119,6 +119,38 @@ const routes: Routes = [
     path: 'citas-detalle',
     loadChildren: () => import('./pages/citas-detalle/citas-detalle.module').then( m => m.CitasDetallePageModule)
   },
+  {
+    path: 'comprobante-pago',
+    loadChildren: () => import('./pages/comprobante-pago/comprobante-pago.module').then( m => m.ComprobantePagoPageModule)
+  },
+  {
+    path: 'certificado-laboral',
+    loadChildren: () => import('./pages/certificado-laboral/certificado-laboral.module').then( m => m.CertificadoLaboralPageModule)
+  },
+  {
+    path: 'primas-legales',
+    loadChildren: () => import('./pages/primas-legales/primas-legales.module').then( m => m.PrimasLegalesPageModule)
+  },
+  {
+    path: 'primas-convencionales',
+    loadChildren: () => import('./pages/primas-convencionales/primas-convencionales.module').then( m => m.PrimasConvencionalesPageModule)
+  },
+  {
+    path: 'cesantias-intereses',
+    loadChildren: () => import('./pages/cesantias-intereses/cesantias-intereses.module').then( m => m.CesantiasInteresesPageModule)
+  },
+  {
+    path: 'historial-permisos',
+    loadChildren: () => import('./pages/historial-permisos/historial-permisos.module').then( m => m.HistorialPermisosPageModule)
+  },
+  {
+    path: 'historial-incapacidades',
+    loadChildren: () => import('./pages/historial-incapacidades/historial-incapacidades.module').then( m => m.HistorialIncapacidadesPageModule)
+  },
+  {
+    path: 'nivel-endeudamiento',
+    loadChildren: () => import('./pages/nivel-endeudamiento/nivel-endeudamiento.module').then( m => m.NivelEndeudamientoPageModule)
+  },
 
 
 
