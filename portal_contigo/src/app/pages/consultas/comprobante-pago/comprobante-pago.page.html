@@ -1,9 +1,34 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>comprobante-pago</ion-title>
+  <ion-toolbar class="new-background-color">
+    <ion-buttons slot="start" class="new-background-color">
+      <ion-back-button defaultHref="consultas" icon="arrow-back-outline" mode="md"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Comprobante de pago</ion-title>
   </ion-toolbar>
+
+  <ion-item lines="full" >
+    <ion-label align=center>
+      <font size="2" class="whiteSpaceClass">Ingrese una fecha para filtrar la consulta</font>
+    </ion-label>
+  </ion-item>
 </ion-header>
 
 <ion-content>
+  <ion-list>
+    <div align=left class="item-solicitud"> 
+      <ion-label>
+          Fecha: 
+      </ion-label>
+    </div>
+    <ion-card>
+      <ion-item>
+        <div aling=center class="texto-solicitud"> 
+          <ion-label position="floating"></ion-label>
+          <ion-datetime displayFormat="DD/MM/YYYY" min="{{fechaInfo}}" max="2100" placeholder="{{fechaInfo}}" ></ion-datetime>
+        </div>
+      </ion-item>
+    </ion-card>
+  <ion-button class="item-solicitud-boton" color="medium" (click)="generarDocumento()" expand="block" shape="round">GENERAR</ion-button>
 
+  </ion-list>
 </ion-content>

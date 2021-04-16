@@ -12,4 +12,16 @@ export class CertificadoLaboralPage implements OnInit {
   ngOnInit() {
   }
 
+  conSalarioAdiciones(){
+    console.log("con salario adiciones");
+  }
+
+  sinSalario(){
+    console.log("sin salario");
+  }
+
+  conSalario(){
+    console.log("con salario");
+  }
+
 }

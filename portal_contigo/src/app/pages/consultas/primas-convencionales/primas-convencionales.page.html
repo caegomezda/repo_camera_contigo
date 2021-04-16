@@ -1,9 +1,63 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>primas-convencionales</ion-title>
+  <ion-toolbar class="new-background-color">
+    <ion-buttons slot="start" class="new-background-color">
+      <ion-back-button defaultHref="consultas" icon="arrow-back-outline" mode="md"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Primas convencionales</ion-title>
   </ion-toolbar>
+
+  <ion-item lines="full" >
+    <ion-label align=center>
+      <font size="2" class="whiteSpaceClass">Ver detalle en convencion colectiva</font>
+    </ion-label>
+  </ion-item>
 </ion-header>
 
 <ion-content>
-
+  <ion-card>
+    <ion-list>
+      <ion-grid fixed>
+        <ion-row>
+          <ion-col size="6">
+            <div>
+              <ion-label  class="texto-solicitud">
+                Navidad:
+              </ion-label>
+              <ion-label  class="texto-solicitud">
+                Semana Santa:
+              </ion-label>
+              <ion-label  class="texto-solicitud">
+                Carestia:
+              </ion-label>
+              <ion-label  class="texto-solicitud">
+                Vacaciones:
+              </ion-label>
+              <ion-label  class="texto-solicitud">
+                Extra 'mes':
+              </ion-label>
+            </div>
+          </ion-col>
+          <ion-col size="6">
+            <div >
+              <ion-label class="texto-solicitud">
+                'valor prima'
+              </ion-label>
+              <ion-label class="texto-solicitud">
+                'valor prima'
+              </ion-label>
+              <ion-label class="texto-solicitud">
+                'valor prima'
+              </ion-label>
+              <ion-label class="texto-solicitud">
+                'valor prima'
+              </ion-label>
+              <ion-label class="texto-solicitud">
+                'valor prima'
+              </ion-label>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-list>
+  </ion-card>
 </ion-content>

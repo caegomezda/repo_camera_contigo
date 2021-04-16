@@ -1,9 +1,33 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>certificado-laboral</ion-title>
+  <ion-toolbar class="new-background-color">
+    <ion-buttons slot="start" class="new-background-color">
+      <ion-back-button defaultHref="consultas" icon="arrow-back-outline" mode="md"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Certificado laboral</ion-title>
   </ion-toolbar>
+
+  <ion-item lines="full" >
+    <ion-label align=center>
+      <font size="2" class="whiteSpaceClass">Seleccione el boton para descargar el certificado</font>
+    </ion-label>
+  </ion-item>
 </ion-header>
 
 <ion-content>
+  <ion-list>
+    <div align=left class="item-solicitud"> 
+      <ion-label>
+          Dirigido a:
+      </ion-label>
+    </div>
+    <ion-card>
+      <ion-item>
+        <ion-input type="text"></ion-input>
+      </ion-item>
+    </ion-card>
+    <ion-button class="item-solicitud-boton" color="medium" (click)="conSalarioAdiciones()" expand="block" shape="round">CON SALARIO Y ADICIONALES</ion-button>
+    <ion-button class="item-solicitud-boton" color="medium" (click)="sinSalario()" expand="block" shape="round">SIN SALARIO</ion-button>
+    <ion-button class="item-solicitud-boton" color="medium" (click)="conSalario()" expand="block" shape="round">CON SALARIO</ion-button>
 
+  </ion-list>
 </ion-content>
