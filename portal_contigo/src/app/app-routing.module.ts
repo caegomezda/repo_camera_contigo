@@ -61,19 +61,19 @@ const routes: Routes = [
   },
   {
     path: 'vacaciones',
-    loadChildren: () => import('./pages/vacaciones/vacaciones.module').then( m => m.VacacionesPageModule)
+    loadChildren: () => import('./pages/solicitudes/vacaciones/vacaciones.module').then( m => m.VacacionesPageModule)
   },
   {
     path: 'auxilios-convecionales',
-    loadChildren: () => import('./pages/auxilios-convecionales/auxilios-convecionales.module').then( m => m.AuxiliosConvecionalesPageModule)
+    loadChildren: () => import('./pages/solicitudes/auxilios-convecionales/auxilios-convecionales.module').then( m => m.AuxiliosConvecionalesPageModule)
   },
   {
     path: 'auxilios-estudio',
-    loadChildren: () => import('./pages/auxilios-estudio/auxilios-estudio.module').then( m => m.AuxiliosEstudioPageModule)
+    loadChildren: () => import('./pages/solicitudes/auxilios-estudio/auxilios-estudio.module').then( m => m.AuxiliosEstudioPageModule)
   },
   {
     path: 'requesitos-solicitudes',
-    loadChildren: () => import('./pages/requesitos-solicitudes/requesitos-solicitudes.module').then( m => m.RequesitosSolicitudesPageModule)
+    loadChildren: () => import('./pages/solicitudes/requesitos-solicitudes/requesitos-solicitudes.module').then( m => m.RequesitosSolicitudesPageModule)
   },
   {
     path: 'camara-page',
@@ -81,75 +81,75 @@ const routes: Routes = [
   },
   {
     path: 'cesantias',
-    loadChildren: () => import('./pages/cesantias/cesantias.module').then( m => m.CesantiasPageModule)
+    loadChildren: () => import('./pages/solicitudes/cesantias/cesantias.module').then( m => m.CesantiasPageModule)
   },
   {
     path: 'cambio-beneficiario',
-    loadChildren: () => import('./pages/cambio-beneficiario/cambio-beneficiario.module').then( m => m.CambioBeneficiarioPageModule)
+    loadChildren: () => import('./pages/solicitudes/cambio-beneficiario/cambio-beneficiario.module').then( m => m.CambioBeneficiarioPageModule)
   },
   {
     path: 'reporte-calamidad-incapacidad',
-    loadChildren: () => import('./pages/reporte-calamidad-incapacidad/reporte-calamidad-incapacidad.module').then( m => m.ReporteCalamidadIncapacidadPageModule)
+    loadChildren: () => import('./pages/solicitudes/reporte-calamidad-incapacidad/reporte-calamidad-incapacidad.module').then( m => m.ReporteCalamidadIncapacidadPageModule)
   },
   {
     path: 'reporte-nomina',
-    loadChildren: () => import('./pages/reporte-nomina/reporte-nomina.module').then( m => m.ReporteNominaPageModule)
+    loadChildren: () => import('./pages/solicitudes/reporte-nomina/reporte-nomina.module').then( m => m.ReporteNominaPageModule)
   },
   {
     path: 'citas-presenciales',
-    loadChildren: () => import('./pages/citas-presenciales/citas-presenciales.module').then( m => m.CitasPresencialesPageModule)
+    loadChildren: () => import('./pages/solicitudes/citas-presenciales/citas-presenciales.module').then( m => m.CitasPresencialesPageModule)
   },
   {
     path: 'calificar-servicios',
-    loadChildren: () => import('./pages/calificar-servicios/calificar-servicios.module').then( m => m.CalificarServiciosPageModule)
+    loadChildren: () => import('./pages/solicitudes/calificar-servicios/calificar-servicios.module').then( m => m.CalificarServiciosPageModule)
   },
   {
     path: 'actualizar-datos',
-    loadChildren: () => import('./pages/actualizar-datos/actualizar-datos.module').then( m => m.ActualizarDatosPageModule)
+    loadChildren: () => import('./pages/solicitudes/actualizar-datos/actualizar-datos.module').then( m => m.ActualizarDatosPageModule)
   },
   {
     path: 'certificados-ingresos',
-    loadChildren: () => import('./pages/certificados-ingresos/certificados-ingresos.module').then( m => m.CertificadosIngresosPageModule)
+    loadChildren: () => import('./pages/solicitudes/certificados-ingresos/certificados-ingresos.module').then( m => m.CertificadosIngresosPageModule)
   },
   {
     path: 'nomina-detalle',
-    loadChildren: () => import('./pages/nomina-detalle/nomina-detalle.module').then( m => m.NominaDetallePageModule)
+    loadChildren: () => import('./pages/solicitudes/nomina-detalle/nomina-detalle.module').then( m => m.NominaDetallePageModule)
   },
   {
     path: 'citas-detalle',
-    loadChildren: () => import('./pages/citas-detalle/citas-detalle.module').then( m => m.CitasDetallePageModule)
+    loadChildren: () => import('./pages/solicitudes/citas-detalle/citas-detalle.module').then( m => m.CitasDetallePageModule)
   },
   {
     path: 'comprobante-pago',
-    loadChildren: () => import('./pages/comprobante-pago/comprobante-pago.module').then( m => m.ComprobantePagoPageModule)
+    loadChildren: () => import('./pages/consultas/comprobante-pago/comprobante-pago.module').then( m => m.ComprobantePagoPageModule)
   },
   {
     path: 'certificado-laboral',
-    loadChildren: () => import('./pages/certificado-laboral/certificado-laboral.module').then( m => m.CertificadoLaboralPageModule)
+    loadChildren: () => import('./pages/consultas/certificado-laboral/certificado-laboral.module').then( m => m.CertificadoLaboralPageModule)
   },
   {
     path: 'primas-legales',
-    loadChildren: () => import('./pages/primas-legales/primas-legales.module').then( m => m.PrimasLegalesPageModule)
+    loadChildren: () => import('./pages/consultas/primas-legales/primas-legales.module').then( m => m.PrimasLegalesPageModule)
   },
   {
     path: 'primas-convencionales',
-    loadChildren: () => import('./pages/primas-convencionales/primas-convencionales.module').then( m => m.PrimasConvencionalesPageModule)
+    loadChildren: () => import('./pages/consultas/primas-convencionales/primas-convencionales.module').then( m => m.PrimasConvencionalesPageModule)
   },
   {
     path: 'cesantias-intereses',
-    loadChildren: () => import('./pages/cesantias-intereses/cesantias-intereses.module').then( m => m.CesantiasInteresesPageModule)
+    loadChildren: () => import('./pages/consultas/cesantias-intereses/cesantias-intereses.module').then( m => m.CesantiasInteresesPageModule)
   },
   {
     path: 'historial-permisos',
-    loadChildren: () => import('./pages/historial-permisos/historial-permisos.module').then( m => m.HistorialPermisosPageModule)
+    loadChildren: () => import('./pages/consultas/historial-permisos/historial-permisos.module').then( m => m.HistorialPermisosPageModule)
   },
   {
     path: 'historial-incapacidades',
-    loadChildren: () => import('./pages/historial-incapacidades/historial-incapacidades.module').then( m => m.HistorialIncapacidadesPageModule)
+    loadChildren: () => import('./pages/consultas/historial-incapacidades/historial-incapacidades.module').then( m => m.HistorialIncapacidadesPageModule)
   },
   {
     path: 'nivel-endeudamiento',
-    loadChildren: () => import('./pages/nivel-endeudamiento/nivel-endeudamiento.module').then( m => m.NivelEndeudamientoPageModule)
+    loadChildren: () => import('./pages/consultas/nivel-endeudamiento/nivel-endeudamiento.module').then( m => m.NivelEndeudamientoPageModule)
   },
 
 
