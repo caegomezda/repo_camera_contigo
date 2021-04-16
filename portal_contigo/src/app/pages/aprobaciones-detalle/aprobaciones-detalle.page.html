@@ -64,7 +64,7 @@
             </div>
             <ion-card>
               <div>
-                <ion-select #c [(ngModel)]="aprobForm.Estado" name="Estado" (ionChange)="changeEstadoListener(c.value)" [value]=" ">
+                <ion-select #c slot="end" [(ngModel)]="aprobForm.Estado" name="Estado" (ionChange)="changeEstadoListener(c.value)" [value]=" ">
                   <ion-select-option *ngFor="let parametros of listadoEstadosParametrosArreglo" value="{{parametros}}">{{parametros}}</ion-select-option>
                 </ion-select>
               </div>
@@ -77,7 +77,7 @@
                     Redireccionar:
                   </ion-label>
                 </div>
-                <ion-select [(ngModel)]="aprobForm.Redireccionar" name="Redireccionar"  [value]=" ">
+                <ion-select slot="end" [(ngModel)]="aprobForm.Redireccionar" name="Redireccionar"  [value]=" ">
                   <ion-select-option *ngFor="let usuarios of listadoParametrosUsuarios" value="{{usarios.Nombre}}">{{usarios.Nombre}}}</ion-select-option>
                 </ion-select>
               </div>

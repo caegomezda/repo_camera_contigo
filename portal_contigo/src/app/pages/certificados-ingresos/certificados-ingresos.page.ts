@@ -6,10 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./certificados-ingresos.page.scss'],
 })
 export class CertificadosIngresosPage implements OnInit {
-
+  listaYearsCertificados:any =['2018','2019','2020','2021'];
   constructor() { }
 
   ngOnInit() {
   }
-
+  generarDocumento(){
+    console.log("Generar certificado");
+  }
 }

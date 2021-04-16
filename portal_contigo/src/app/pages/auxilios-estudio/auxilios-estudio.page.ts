@@ -17,6 +17,7 @@ export class AuxiliosEstudioPage implements OnInit {
 
   tomarFoto(){
     console.log("Tomar foto");
+    this.storage.getNombreSolicitud("Auxilios Estudio");
     this.router.navigate(['/camara-page']);
   }
   verRequsitos(){
@@ -25,7 +26,7 @@ export class AuxiliosEstudioPage implements OnInit {
   }
 
   sendNombresolicitud(){
-  this.storage.getNombreSolicitud("Auxilios Estudio");
+    this.storage.getNombreSolicitud("Auxilios Estudio");
   }
 
   enviarAuxEstudio(){

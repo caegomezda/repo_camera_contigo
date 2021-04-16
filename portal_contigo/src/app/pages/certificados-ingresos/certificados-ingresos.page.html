@@ -1,9 +1,32 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>certificados-ingresos</ion-title>
+  <ion-toolbar class="new-background-color">
+    <ion-buttons slot="start" class="new-background-color">
+      <ion-back-button defaultHref="solicitudes" icon="arrow-back-outline" mode="md"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Certificado de Ingresos y Retencion</ion-title>
   </ion-toolbar>
+  <!-- <ion-item lines="full" >
+    <ion-label align=center>
+      <font size="2" class="whiteSpaceClass">Seleccione una calificacion a los servicios prestados por SKINCO</font>
+    </ion-label>
+  </ion-item> -->
 </ion-header>
 
 <ion-content>
+
+  <div align=left class="item-solicitud"> 
+    <ion-label>
+        Escolaridad:
+    </ion-label>
+  </div>
+  <ion-card>
+    <ion-item>
+      <ion-select slot="end">
+          <ion-select-option *ngFor="let year of listaYearsCertificados" value={{year}}>{{year}}</ion-select-option>
+        </ion-select>
+    </ion-item>
+  </ion-card>
+
+  <ion-button class="item-solicitud-boton" color="medium" (click)="generarDocumento()" expand="block" shape="round">ENVIAR</ion-button>
 
 </ion-content>

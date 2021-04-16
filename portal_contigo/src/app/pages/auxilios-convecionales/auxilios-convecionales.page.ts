@@ -17,6 +17,7 @@ export class AuxiliosConvecionalesPage implements OnInit {
 
   tomarFoto(){
     console.log("Tomar foto");
+    this.storage.getNombreSolicitud("Auxilios Convencionales");
     this.router.navigate(['/camara-page']);
   }
   verRequsitos(){

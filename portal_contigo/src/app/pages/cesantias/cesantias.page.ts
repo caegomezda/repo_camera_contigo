@@ -18,6 +18,7 @@ export class CesantiasPage implements OnInit {
 
   tomarFoto(){
     console.log("Tomar foto");
+    this.storage.getNombreSolicitud("Cesantias");
     this.router.navigate(['/camara-page']);
   }
   verRequsitos(){
@@ -26,7 +27,7 @@ export class CesantiasPage implements OnInit {
   }
 
   sendNombresolicitud(){
-  this.storage.getNombreSolicitud("Cesantias");
+    this.storage.getNombreSolicitud("Cesantias");
   }
 
   enviarCesantias(){

@@ -56,15 +56,17 @@ export class SolicitudesPage implements OnInit {
 
   }
   calificarServicios(){
-    console.log("calificarServicios")
+    console.log("calificarServicios");
     this.router.navigate(['/calificar-servicios']);
-
+    
   }
   actualizarDatosPersonales(){
-    console.log("actualizarDatosPersonales")
+    console.log("actualizarDatosPersonales");
+    this.router.navigate(['/actualizar-datos']);
   }
   certificadoDeIngresoYRetencion(){
-    console.log("certificadoDeIngresoYRetencion")
+    console.log("certificadoDeIngresoYRetencion");
+    this.router.navigate(['/certificados-ingresos']);
   }
 
 }

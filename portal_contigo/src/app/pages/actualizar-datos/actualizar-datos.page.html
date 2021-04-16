@@ -13,5 +13,191 @@
 </ion-header>
 
 <ion-content>
+  <ion-list>
+
+    <div align=left class="item-solicitud"> 
+      <ion-label>
+          Nombres: 
+      </ion-label>
+    </div>
+    <ion-card>
+      <ion-item>
+        <ion-label>
+          {{listaUsuario.Nombres}}
+        </ion-label>
+      </ion-item>
+    </ion-card>
+
+    <div align=left class="item-solicitud"> 
+      <ion-label>
+          Apellidos:
+      </ion-label>
+    </div>
+    <ion-card>
+      <ion-item>
+        <ion-label>
+          {{listaUsuario.Apellidos}}
+        </ion-label>
+      </ion-item>
+    </ion-card>
+
+    <div align=left class="item-solicitud"> 
+      <ion-label>
+          Direccion :
+      </ion-label>
+    </div>
+    <ion-card>
+      <ion-item>
+        <ion-input type="text"  value={{listaUsuario.Direccion}}></ion-input>
+      </ion-item>
+    </ion-card>
+
+    <div align=left class="item-solicitud"> 
+      <ion-label>
+          Vivienda Propia:
+      </ion-label>
+    </div>
+    <ion-card>
+      <ion-item>
+          <ion-select slot="end"  value={{listaUsuario.ViviendaPropia}}>
+            <ion-select-option value="Si">Si</ion-select-option>
+            <ion-select-option value="No">No</ion-select-option>
+            <ion-select-option value="Familiar">Familiar</ion-select-option>
+          </ion-select>
+      </ion-item>
+    </ion-card>
+
+    <div align=left class="item-solicitud"> 
+      <ion-label>
+          Telefono:
+      </ion-label>
+    </div>
+    <ion-card>
+      <ion-item>
+        <ion-input type="text" value={{listaUsuario.Telefono}}></ion-input>
+      </ion-item>
+    </ion-card>
+
+    <div align=left class="item-solicitud"> 
+      <ion-label>
+          Celular:
+      </ion-label>
+    </div>
+    <ion-card>
+      <ion-item>
+        <ion-input type="text" value={{listaUsuario.Celular}}></ion-input>
+      </ion-item>
+    </ion-card>
+
+    <div align=left class="item-solicitud"> 
+      <ion-label>
+          Escolaridad:
+      </ion-label>
+    </div>
+    <ion-card>
+      <ion-item>
+        <ion-select slot="end"  value={{listaUsuario.Escolaridad}}>
+            <ion-select-option value="BACHILLER">BACHILLER</ion-select-option>
+            <ion-select-option value="DOCTORADO">DOCTORADO</ion-select-option>
+            <ion-select-option value="DIPLOMADO">DIPLOMADO</ion-select-option>
+            <ion-select-option value="ESPECIALIZACION">ESPECIALIZACION</ion-select-option>
+            <ion-select-option value="MAESTRIA">MAESTRIA</ion-select-option>
+            <ion-select-option value="PROFESIONAL">PROFESIONAL</ion-select-option>
+            <ion-select-option value="PRIMARIO">PRIMARIO</ion-select-option>
+            <ion-select-option value="TECNICO">TECNICO</ion-select-option>
+            <ion-select-option value="TECNOLOGIA">TECNOLOGIA</ion-select-option>
+            <ion-select-option value="OTRO">OTRO</ion-select-option>
+          </ion-select>
+      </ion-item>
+    </ion-card>
+
+    <div align=left class="item-solicitud"> 
+      <ion-label>
+          Estado civil:
+      </ion-label>
+    </div>
+    <ion-card>
+      <ion-item>
+        <ion-select slot="end" value={{listaUsuario.EstadoCivil}}>
+            <ion-select-option value="Casado">Casado</ion-select-option>
+            <ion-select-option value="Union libre">Union libre</ion-select-option>
+            <ion-select-option value="Divorciado">Divorciado</ion-select-option>
+            <ion-select-option value="Soltero">Soltero</ion-select-option>
+            <ion-select-option value="Viudo">Viudo</ion-select-option>
+            <ion-select-option value="Otra">Otra</ion-select-option>
+          </ion-select>
+      </ion-item>
+    </ion-card>
+  </ion-list>
+
+  <div align=left class="item-solicitud"> 
+    <ion-label>
+        Correo:
+    </ion-label>
+  </div>
+  <ion-card>
+    <ion-item>
+      <ion-input type="text" value={{listaUsuario.Correo}}></ion-input>
+    </ion-item>
+  </ion-card>
+
+  <div align=left class="item-solicitud"> 
+    <ion-label>
+        Barrio:
+    </ion-label>
+  </div>
+  <ion-card>
+    <ion-item>
+      <ion-input type="text" value={{listaUsuario.Barrio}}></ion-input>
+    </ion-item>
+  </ion-card>
+
+  <div align=left class="item-solicitud"> 
+    <ion-label>
+        Municipio:
+    </ion-label>
+  </div>
+  <ion-card>
+    <ion-item>
+      <ion-input type="text" value={{listaUsuario.Municipio}}></ion-input>
+    </ion-item>
+  </ion-card>
+
+  <div align=left class="item-solicitud"> 
+    <ion-label>
+        Hijos:
+    </ion-label>
+  </div>
+  <ion-card>
+    <ion-item>
+      <ion-input type="text" value={{listaUsuario.Hijos}}></ion-input>
+    </ion-item>
+  </ion-card>
+
+  <div align=left class="item-solicitud"> 
+    <ion-label>
+        Descripcion de solicitud
+    </ion-label>
+  </div>
+  <ion-card>
+    <ion-item>
+      <ion-textarea
+        value="">
+      </ion-textarea>
+    </ion-item>
+  </ion-card>
+
+  <div align=left class="item-solicitud"> 
+    <ion-label>
+      Adjuntar archivos
+    </ion-label>
+  </div>
+  <div   >
+    <ion-card align=center>
+      <img  (click)="tomarFoto()" src="../../../assets/imagenes/camara.png" alt="">
+    </ion-card>
+  </div>
+  <ion-button class="item-solicitud-boton" color="medium" (click)="actualizarInfoPersonal()" expand="block" shape="round">ENVIAR</ion-button>
+
 
 </ion-content>

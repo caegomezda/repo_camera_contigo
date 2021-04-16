@@ -18,6 +18,7 @@ export class ReporteCalamidadIncapacidadPage implements OnInit {
   
   tomarFoto(){
     console.log("Tomar foto");
+    this.storage.getNombreSolicitud("Reporte Incapacidad y Calamidad");
     this.router.navigate(['/camara-page']);
   }
   verRequsitos(){

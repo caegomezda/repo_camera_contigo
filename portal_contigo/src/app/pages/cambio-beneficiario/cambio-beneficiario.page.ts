@@ -18,6 +18,7 @@ export class CambioBeneficiarioPage implements OnInit {
   
   tomarFoto(){
     console.log("Tomar foto");
+    this.storage.getNombreSolicitud("Cambio Beneficiario Seguridad Social");
     this.router.navigate(['/camara-page']);
   }
   verRequsitos(){
