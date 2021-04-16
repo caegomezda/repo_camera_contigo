@@ -20,27 +20,6 @@
     </ion-label>
   </ion-button>
 
-  <div align=left class="item-solicitud"> 
-    <ion-label>
-      Lista de Auxilios:
-    </ion-label>
-  </div>
-  <ion-card>
-    <div>
-      <!-- <ion-select #c [(ngModel)]="aprobForm.Estado" name="Estado" (ionChange)="changeEstadoListener(c.value)" [value]=" "> -->
-      <ion-select placeholder="Seleccione...">>
-        <!-- <ion-select-option *ngFor="let parametros of listadoEstadosParametrosArreglo" value="{{parametros}}">{{parametros}}</ion-select-option> -->
-        <ion-select-option >datos</ion-select-option>
-        <ion-select-option >datos</ion-select-option>
-        <ion-select-option >datos</ion-select-option>
-        <ion-select-option >datos</ion-select-option>
-        <ion-select-option >datos</ion-select-option>
-        <ion-select-option >datos</ion-select-option>
-
-      </ion-select>
-    </div>
-  </ion-card>
-
     <div align=left class="item-solicitud"> 
       <ion-label>
         Descripcion:
@@ -64,7 +43,7 @@
       <img  (click)="tomarFoto()" src="../../../assets/imagenes/camara.png" alt="">
     </ion-card>
   </div>
-  <ion-button class="item-solicitud-boton" color="medium" (click)="enviarAuxConvencionales()" expand="block" shape="round">ENVIAR</ion-button>
+  <ion-button class="item-solicitud-boton" color="medium" (click)="enviarCesantias()" expand="block" shape="round">ENVIAR</ion-button>
 
 
 </ion-content>

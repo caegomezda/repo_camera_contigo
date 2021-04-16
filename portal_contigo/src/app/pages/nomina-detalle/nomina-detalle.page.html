@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar class="new-background-color">
+    <ion-buttons slot="start" class="new-background-color">
+      <ion-back-button defaultHref="solicitudes" icon="arrow-back-outline" mode="md"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{nombreSolicitud}}</ion-title>
+  </ion-toolbar>
+  <ion-item lines="full" >
+    <ion-label align=center>
+      <font size="2" class="whiteSpaceClass">Ingrese la descripcion de la solicitud</font>
+    </ion-label>
+  </ion-item>
+</ion-header>
+
+<ion-content>
+  <div align=left class="item-solicitud"> 
+    <ion-label>
+      Descripcion:
+    </ion-label>
+  </div>
+  <ion-card>
+    <ion-item>
+      <ion-textarea
+        value="">
+      </ion-textarea>
+    </ion-item>
+  </ion-card>
+  <ion-button class="item-solicitud-boton" color="medium" (click)="enviarInfoNomina(infoNomina)" expand="block" shape="round">ENVIAR</ion-button>
+
+</ion-content>

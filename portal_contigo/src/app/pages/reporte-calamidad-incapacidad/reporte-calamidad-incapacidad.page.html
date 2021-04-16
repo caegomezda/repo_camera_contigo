@@ -1,9 +1,51 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>reporte-calamidad-incapacidad</ion-title>
+  <ion-toolbar class="new-background-color">
+    <ion-buttons slot="start" class="new-background-color">
+      <ion-back-button defaultHref="solicitudes" icon="arrow-back-outline" mode="md"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Reporte Incapacidad </ion-title>
+    <ion-title>y Calamidad</ion-title>
+
   </ion-toolbar>
+  <ion-item lines="full" >
+    <ion-label align=center>
+      <font size="2" class="whiteSpaceClass">Ingrese La informacion en los campos</font>
+    </ion-label>
+  </ion-item>
 </ion-header>
 
 <ion-content>
+
+  <ion-button class="item-solicitud-boton" color="medium" (click)="verRequsitos()" expand="block"  shape="round">
+    <ion-label>
+      VER REQUSITOS
+    </ion-label>
+  </ion-button>
+
+    <div align=left class="item-solicitud"> 
+      <ion-label>
+        Descripcion:
+      </ion-label>
+    </div>
+    <ion-card>
+      <ion-item>
+        <ion-textarea
+          value="">
+        </ion-textarea>
+      </ion-item>
+    </ion-card>
+
+  <div align=left class="item-solicitud"> 
+    <ion-label>
+      Resgitro Fotográfico:
+    </ion-label>
+  </div>
+  <div   >
+    <ion-card align=center>
+      <img  (click)="tomarFoto()" src="../../../assets/imagenes/camara.png" alt="">
+    </ion-card>
+  </div>
+  <ion-button class="item-solicitud-boton" color="medium" (click)="enviarRepoIncaCala()" expand="block" shape="round">ENVIAR</ion-button>
+
 
 </ion-content>

@@ -1,0 +1,61 @@
+<ion-header>
+  <ion-toolbar class="new-background-color">
+    <ion-buttons slot="start" class="new-background-color">
+      <ion-back-button defaultHref="solicitudes" icon="arrow-back-outline" mode="md"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Auxilios Estudio</ion-title>
+  </ion-toolbar>
+  <ion-item lines="full" >
+    <ion-label align=center>
+      <font size="2" class="whiteSpaceClass">Seleccione una calificacion a los servicios prestados por SKINCO</font>
+    </ion-label>
+  </ion-item>
+</ion-header>
+
+<ion-content>
+
+
+  <div align=left class="item-solicitud"> 
+    <ion-label>
+      Seleccione el area a calificar
+    </ion-label>
+  </div>
+  <ion-card>
+    <div>
+      <ion-select >
+        <ion-select-option *ngFor="let area of listadoAreasCalificar" value="{{area}}">{{area}}</ion-select-option>
+      </ion-select>
+    </div>
+  </ion-card>
+
+  <div align=left class="item-solicitud"> 
+    <ion-label>
+      De una puntuacion al area seleccionada
+    </ion-label>
+  </div>
+  <ion-card>
+    <div>
+      <ion-select>
+        <ion-select-option *ngFor="let puntuacion of listadoPuntuacion" value="{{puntuacion}}">{{puntuacion}}</ion-select-option>
+      </ion-select>
+    </div>
+  </ion-card>
+
+    <div align=left class="item-solicitud"> 
+      <ion-label>
+          Ingrese un comentario
+      </ion-label>
+    </div>
+    <ion-card>
+      <ion-item>
+        <ion-textarea
+          value="">
+        </ion-textarea>
+      </ion-item>
+    </ion-card>
+
+
+  <ion-button class="item-solicitud-boton" color="medium" (click)="enviarInfoCalificarServicio()" expand="block" shape="round">ENVIAR</ion-button>
+
+
+</ion-content>

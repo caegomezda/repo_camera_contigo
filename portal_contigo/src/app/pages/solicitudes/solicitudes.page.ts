@@ -33,21 +33,32 @@ export class SolicitudesPage implements OnInit {
 
   cesantias(){
     console.log("cesantias");
+    this.router.navigate(['/cesantias']);
+    
   }
   reportesDeNomina(){
     console.log("reportesDeNomina");
+    this.router.navigate(['/reporte-nomina']);
   }
   camboBeneficiarioSeguridadSocial(){
     console.log("camboBeneficiarioSeguridadSocial");
+    this.router.navigate(['/cambio-beneficiario']);
+
   }
   reporteIncapacidadYCalamidad(){
-    console.log("reporteIncapacidadYCalamidad")
+    console.log("reporteIncapacidadYCalamidad");
+    this.router.navigate(['/reporte-calamidad-incapacidad']);
+    
   }
   citasPresenciales(){
-    console.log("citasPresenciales")
+    console.log("citasPresenciales");
+    this.router.navigate(['/citas-presenciales']);
+
   }
   calificarServicios(){
     console.log("calificarServicios")
+    this.router.navigate(['/calificar-servicios']);
+
   }
   actualizarDatosPersonales(){
     console.log("actualizarDatosPersonales")

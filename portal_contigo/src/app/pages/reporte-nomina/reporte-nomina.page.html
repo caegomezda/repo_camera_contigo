@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar class="new-background-color">
+  <ion-buttons slot="start">
+    <ion-back-button defaultHref="solicitudes" icon="arrow-back-outline" mode="md"></ion-back-button>
+  </ion-buttons>
+    <ion-title>Nomina</ion-title>
+  </ion-toolbar>
+
+  <ion-item lines="full" >
+    <ion-label align=center>
+      <font size="2" class="whiteSpaceClass">En esta seccion se pueden encontrar varios tipos de solicitud a nomina, seleccione la opcion que mas se ajuste a su necesidad</font>
+    </ion-label>
+  </ion-item>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-button color="medium" class="item-solicitud-boton" (click)="solicitudInforma()" expand="block"  shape="round">
+      SOLICITUD INFORMACION
+    </ion-button>
+    <ion-button color="medium" class="item-solicitud-boton" (click)="otrasSolicitudesReclamos()" expand="block"  shape="round">
+      OTRAS SOLICITUDES Y/O RECLAMOS
+    </ion-button>
+  </ion-list>
+</ion-content>

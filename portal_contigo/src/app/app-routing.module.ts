@@ -91,6 +91,34 @@ const routes: Routes = [
     path: 'reporte-calamidad-incapacidad',
     loadChildren: () => import('./pages/reporte-calamidad-incapacidad/reporte-calamidad-incapacidad.module').then( m => m.ReporteCalamidadIncapacidadPageModule)
   },
+  {
+    path: 'reporte-nomina',
+    loadChildren: () => import('./pages/reporte-nomina/reporte-nomina.module').then( m => m.ReporteNominaPageModule)
+  },
+  {
+    path: 'citas-presenciales',
+    loadChildren: () => import('./pages/citas-presenciales/citas-presenciales.module').then( m => m.CitasPresencialesPageModule)
+  },
+  {
+    path: 'calificar-servicios',
+    loadChildren: () => import('./pages/calificar-servicios/calificar-servicios.module').then( m => m.CalificarServiciosPageModule)
+  },
+  {
+    path: 'actualizar-datos',
+    loadChildren: () => import('./pages/actualizar-datos/actualizar-datos.module').then( m => m.ActualizarDatosPageModule)
+  },
+  {
+    path: 'certificados-ingresos',
+    loadChildren: () => import('./pages/certificados-ingresos/certificados-ingresos.module').then( m => m.CertificadosIngresosPageModule)
+  },
+  {
+    path: 'nomina-detalle',
+    loadChildren: () => import('./pages/nomina-detalle/nomina-detalle.module').then( m => m.NominaDetallePageModule)
+  },
+  {
+    path: 'citas-detalle',
+    loadChildren: () => import('./pages/citas-detalle/citas-detalle.module').then( m => m.CitasDetallePageModule)
+  },
 
 
 

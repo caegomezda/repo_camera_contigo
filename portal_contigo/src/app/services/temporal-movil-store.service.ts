@@ -8,6 +8,8 @@ export class TemporalMovilStoreService {
   solicitudDetalle:any;
   aprobacionDetalle:any;
   nombreSolicitud:any;
+  cita:any;
+  nomina:any;
   d = new Date();
   constructor() { }
 
@@ -49,6 +51,22 @@ export class TemporalMovilStoreService {
 
   sendNombresolicitud(){
     return this.nombreSolicitud
+  }
+
+  getInfoNomina(nomina){
+    this.nomina = nomina
+  }
+
+  sendInfoNomina(){
+    return this.nomina
+  }
+
+  getInfoCitas(cita){
+    this.cita = cita
+  }
+
+  sendInfoCitas(){
+    return this.cita
   }
 
   fechaHoy(Ndias){
