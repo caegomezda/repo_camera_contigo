@@ -10,6 +10,8 @@ export class TemporalMovilStoreService {
   nombreSolicitud:any;
   cita:any;
   nomina:any;
+  cartelera:any;
+  politica:any;
   d = new Date();
   constructor() { }
 
@@ -67,6 +69,22 @@ export class TemporalMovilStoreService {
 
   sendInfoCitas(){
     return this.cita
+  }
+
+  getInfoCartelera(cartelera){
+    this.cartelera = cartelera
+  }
+
+  sendInfoCartelera(){
+    return this.cartelera
+  }
+
+  getInfoPolitica(politica){
+    this.politica = politica
+  }
+
+  sendInfoPolitica(){
+    return this.politica
   }
 
   fechaHoy(Ndias){

@@ -151,6 +151,14 @@ const routes: Routes = [
     path: 'nivel-endeudamiento',
     loadChildren: () => import('./pages/consultas/nivel-endeudamiento/nivel-endeudamiento.module').then( m => m.NivelEndeudamientoPageModule)
   },
+  {
+    path: 'cartelera-detalle',
+    loadChildren: () => import('./pages/cartelera-detalle/cartelera-detalle.module').then( m => m.CarteleraDetallePageModule)
+  },
+  {
+    path: 'politicas-detalle',
+    loadChildren: () => import('./pages/politicas-detalle/politicas-detalle.module').then( m => m.PoliticasDetallePageModule)
+  },
 
 
 

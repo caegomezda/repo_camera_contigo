@@ -38,20 +38,15 @@ export class MisPendientesPage implements OnInit {
     
     let result = await this.solicitudes.listaSolicitudes(newForm);
     this.isLoad = true
-    console.log("result lista mis pendientes",result);
     this.listaInfoSolicitudes = result['ListaParametros'];
-    console.log("this.listaSolicitudes",this.listaInfoSolicitudes);
   }
 
   async callInfoUsuario(){
     let result = await this.storage.sendInfoUsuario();
-    console.log("result en call info Usuario",result[1]);
     this.infoUsuario = result[1];
   }
 
   onClickItem(solicitudes){
-    console.log("ITEM CLICK");
-    console.log(solicitudes)
     this.storage.getInfoListSolicitudDetalle(solicitudes);
     this.router.navigate(['/mis-pendientes-detalle']);
   }

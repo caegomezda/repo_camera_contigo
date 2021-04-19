@@ -1,25 +1,42 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar class="new-background-color">
 
     <ion-buttons slot="start">
       <ion-back-button defaultHref="menu" icon="arrow-back-outline" mode="md"></ion-back-button>
     </ion-buttons>
 
-    <ion-title>politicas</ion-title>
+    <ion-title>Politicas</ion-title>
   </ion-toolbar>
+
+  <ion-item lines="full" >
+    <ion-label align=center>
+      <font size="1" class="whiteSpaceClass">En esta sección puede ver la lista de Politicas, si hace clic sobre algún enunciado puede descargar el archivo adjunto</font>
+    </ion-label>
+  </ion-item>
+
 </ion-header>
 
 <ion-content>
   <ion-card>
-    <ion-item lines="full" >
-      <ion-label align=center>
-        <font size="1" class="whiteSpaceClass">En esta sección puede ver la lista de políticas, si hace clic sobre algún enunciado puede descargar el archivo adjunto</font>
-      </ion-label>
-    </ion-item>
-    <div align=center >
-        <ion-item class="ion-padding" lines="none">
-          <ion-label>Fecha de publicacion:</ion-label>
-        </ion-item>
-    </div>
+    <ion-item *ngFor="let politica of politicaInfo" lines="full">
+      <!-- <item > -->
+
+        <ion-label class="texto-solicitud"  (click)="carteleraDetalle(politica)">
+          <h2 class="text">
+            <small>
+              <ion-label>Fecha de publicacion: {{politica.fecha}}</ion-label>
+              <!-- {{solicitudes.Codigo}}-{{solicitudes.Fecha}}-{{solicitudes.Estado}}-{{solicitudes.Hora}} -->
+            </small>
+          </h2>
+          <h3 class="whiteSpaceClass">  
+            {{politica.id}}
+            {{politica.nombre}}
+            <!-- {{solicitudes.TipoSolicitud}} -->
+            'Informacion de politica'
+          </h3>
+        </ion-label>
+
+      </ion-item>
+    <!-- </div> -->
   </ion-card>
 </ion-content>
