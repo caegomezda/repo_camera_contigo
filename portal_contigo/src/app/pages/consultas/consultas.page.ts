@@ -42,6 +42,6 @@ export class ConsultasPage implements OnInit {
   }
   miNivelDeEndeundamiento(){
     console.log("miNivelDeEndeundamiento");
-    this.router.navigate(['/nivel-endeudamiento'])
+    this.router.navigate(['/nivel-endeudamiento']);
   }
 }
