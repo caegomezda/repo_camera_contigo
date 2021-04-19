@@ -53,11 +53,11 @@ const routes: Routes = [
   },
   {
     path: 'mis-pendientes-detalle',
-    loadChildren: () => import('./pages/mis-pendientes-detalle/mis-pendientes-detalle.module').then( m => m.MisPendientesDetallePageModule)
+    loadChildren: () => import('./pages/mis-pendientes/mis-pendientes-detalle/mis-pendientes-detalle.module').then( m => m.MisPendientesDetallePageModule)
   },
   {
     path: 'aprobaciones-detalle',
-    loadChildren: () => import('./pages/aprobaciones-detalle/aprobaciones-detalle.module').then( m => m.AprobacionesDetallePageModule)
+    loadChildren: () => import('./pages/aprobaciones/aprobaciones-detalle/aprobaciones-detalle.module').then( m => m.AprobacionesDetallePageModule)
   },
   {
     path: 'vacaciones',
@@ -153,15 +153,23 @@ const routes: Routes = [
   },
   {
     path: 'cartelera-detalle',
-    loadChildren: () => import('./pages/cartelera-detalle/cartelera-detalle.module').then( m => m.CarteleraDetallePageModule)
+    loadChildren: () => import('./pages/cartelera/cartelera-detalle/cartelera-detalle.module').then( m => m.CarteleraDetallePageModule)
   },
   {
     path: 'politicas-detalle',
-    loadChildren: () => import('./pages/politicas-detalle/politicas-detalle.module').then( m => m.PoliticasDetallePageModule)
+    loadChildren: () => import('./pages/politicas/politicas-detalle/politicas-detalle.module').then( m => m.PoliticasDetallePageModule)
   },
   {
     path: 'preguntas-detalle',
-    loadChildren: () => import('./pages/preguntas-detalle/preguntas-detalle.module').then( m => m.PreguntasDetallePageModule)
+    loadChildren: () => import('./pages/preguntas/preguntas-detalle/preguntas-detalle.module').then( m => m.PreguntasDetallePageModule)
+  },
+  {
+    path: 'registro-cena',
+    loadChildren: () => import('./pages/registro-cena/registro-cena.module').then( m => m.RegistroCenaPageModule)
+  },
+  {
+    path: 'registro-cena-detalle',
+    loadChildren: () => import('./pages/registro-cena/registro-cena-detalle/registro-cena-detalle.module').then( m => m.RegistroCenaDetallePageModule)
   },
 
 

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { TemporalMovilStoreService } from '../../services/temporal-movil-store.service';
+import { TemporalMovilStoreService } from '../../../services/temporal-movil-store.service';
 
 @Component({
   selector: 'app-mis-pendientes-detalle',

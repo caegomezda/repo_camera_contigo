@@ -128,6 +128,21 @@
     </ion-row>
 
     <ion-row class="ion-align-items-center">
+
+      <ion-col>
+        <div align=center>
+          <button>
+            <!-- <ion-icon name="add" size="large"></ion-icon> -->
+            <ion-icon (click)="registroCena()" name="fast-food-outline"></ion-icon>
+          </button>
+        </div>
+        <div align=center>
+          <ion-label>
+            <font size="1">REGISTRO CENA</font>
+          </ion-label>
+        </div>
+      </ion-col>
+
       <ion-col>
         <div align=center>
           <img (click)="chat()" align=center class="img" src="../../../assets/imagenes/Chat.png" alt="">
@@ -150,18 +165,7 @@
         </div>
       </ion-col>
 
-      <ion-col>
-        <div align=center>
-          <!-- <button>
-            <ion-icon name="add" size="large"></ion-icon>
-          </button> -->
-        </div>
-        <div align=center>
-          <ion-label>
-            <font size="1"></font>
-          </ion-label>
-        </div>
-      </ion-col>
+
     </ion-row>
   </ion-grid>
 </ion-content>

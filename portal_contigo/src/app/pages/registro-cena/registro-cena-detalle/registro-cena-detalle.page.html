@@ -1,0 +1,14 @@
+<ion-header>
+  <ion-toolbar class="new-background-color">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="registro-cena" icon="arrow-back-outline" mode="md"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Registro Cena Detalle</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+  <div *ngIf="isLoad">
+    <ion-label>{{infoRegistroCena.dia}}-{{infoRegistroCena.fecha}}-{{infoRegistroCena.id}}</ion-label>
+  </div>
+</ion-content>

@@ -68,6 +68,11 @@ export class MenuPage implements OnInit {
 
   }
 
+  registroCena(){
+    console.log("Registro Cena");
+    this.router.navigate(['/registro-cena']);
+  }
+
   chat(){
     console.log("Chat");
   }

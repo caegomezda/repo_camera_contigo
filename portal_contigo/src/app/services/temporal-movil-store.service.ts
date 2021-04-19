@@ -13,6 +13,7 @@ export class TemporalMovilStoreService {
   cartelera:any;
   politica:any;
   pregunta:any;
+  cena:any;
   d = new Date();
   constructor() { }
 
@@ -94,6 +95,14 @@ export class TemporalMovilStoreService {
 
   sendInfoPregunta(){
     return this.pregunta
+  }
+
+  getInfoCena(cena){
+    this.cena = cena
+  }
+
+  sendInfoCena(){
+    return this.cena
   }
 
   fechaHoy(Ndias){
