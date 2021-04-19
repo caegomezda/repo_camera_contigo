@@ -1,0 +1,89 @@
+<ion-header>
+
+  <ion-toolbar class="new-background-color">
+
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="preguntas" icon="arrow-back-outline" mode="md"></ion-back-button>
+    </ion-buttons>
+
+    <ion-title>Pregunta Detalle</ion-title>
+  </ion-toolbar>
+
+  <ion-item lines="full" >
+    <ion-label align=center>
+      <font size="1" class="whiteSpaceClass">Aca puedes ver la informacion detallada</font>
+    </ion-label>
+  </ion-item>
+</ion-header>
+
+<ion-content>
+
+  <div align=left class="item-solicitud" *ngIf="isLoad"> 
+    <ion-list>
+
+      <ion-row>
+        <ion-col size="3">
+          <ion-card-content>
+            <ion-label class="item-solicitud" align=center>
+              Area:
+            </ion-label>
+          </ion-card-content>
+
+        </ion-col>
+        <ion-card align=center style="border-radius: 40px;">
+          <ion-col size="9">
+            <div align=left>
+              <ion-label class="item-solicitud">{{infoPregunta.area}}</ion-label>
+            </div>
+          </ion-col>
+        </ion-card>
+      </ion-row>
+
+      <div align=left class="item-solicitud"> 
+        <ion-label>
+          Enunciado:
+        </ion-label>
+      </div>
+      <ion-card>
+        <ion-item>
+          <ion-textarea
+          disabled
+          value="{{infoPregunta.nombre}}">
+
+        </ion-textarea>
+        </ion-item>
+      </ion-card>
+
+      <div align=left class="item-solicitud"> 
+        <ion-label>
+          Descripcion:
+        </ion-label>
+      </div>
+      <ion-card>
+        <ion-item>
+          <ion-textarea
+            disabled
+            value="{{infoPregunta.id}}">
+          </ion-textarea>
+        </ion-item>
+      </ion-card>
+
+      <!-- <div align=left class="item-solicitud"> 
+        <ion-label>
+          Descargar Archivo Adjunto:
+        </ion-label>
+      </div>
+      <ion-card-content>
+        <ion-label>
+          "nombre del archivo"
+        </ion-label>
+      </ion-card-content> -->
+      <!-- <ion-card-content align=center>
+          <div > 
+            <img (click)="descargarImagen()" src="../../../assets/imagenes/btnDescarga.png" alt="">
+          </div>
+      </ion-card-content> -->
+
+    </ion-list>
+  </div>
+</ion-content>

@@ -1,3 +1,35 @@
+.item-solicitud{
+    padding: 0px;
+    margin:10px;
+}
+.texto-solicitud{
+    padding: 2px 15px 2px 15px;
+    margin:2px 15px 2px 15px;
+    font-size:16px
+
+}
+
+.texto-solicitud-dos{
+    display:flex;
+    justify-content: center;
+    font-size:16px
+}
+
 .whiteSpaceClass{
     white-space: normal;
+}
+
+.new-background-color{
+    --background:#f18919;
+}
+.new-background-color-div-aprobaciones{
+    background-color: #d2d4df;
+}
+.item-solicitud-boton{
+    padding: 2px 30px 2px 30px;
+    margin:10px 30px 10px 30px;
+}
+
+.text{
+    color:#e94c83;
 }

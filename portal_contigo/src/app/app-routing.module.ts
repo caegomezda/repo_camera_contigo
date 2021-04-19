@@ -159,6 +159,10 @@ const routes: Routes = [
     path: 'politicas-detalle',
     loadChildren: () => import('./pages/politicas-detalle/politicas-detalle.module').then( m => m.PoliticasDetallePageModule)
   },
+  {
+    path: 'preguntas-detalle',
+    loadChildren: () => import('./pages/preguntas-detalle/preguntas-detalle.module').then( m => m.PreguntasDetallePageModule)
+  },
 
 
 

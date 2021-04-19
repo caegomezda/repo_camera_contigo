@@ -1,25 +1,42 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar class="new-background-color">
 
     <ion-buttons slot="start">
       <ion-back-button defaultHref="menu" icon="arrow-back-outline" mode="md"></ion-back-button>
     </ion-buttons>
 
-    <ion-title>preguntas</ion-title>
+    <ion-title>Preguntas</ion-title>
   </ion-toolbar>
+
+  <ion-item lines="full" >
+    <ion-label align=center>
+      <font size="1" class="whiteSpaceClass">En esta sección puede ver la lista de Preguntas, si hace clic sobre algún enunciado puede descargar el archivo adjunto</font>
+    </ion-label>
+  </ion-item>
+
 </ion-header>
 
 <ion-content>
   <ion-card>
-    <ion-item lines="full" >
-      <ion-label align=center>
-        <font size="1" class="whiteSpaceClass">En esta sección puede ver la lista de preguntas frecuentes, si hace clic sobre algún enunciado puede descargar el archivo adjunto</font>
-      </ion-label>
-    </ion-item>
-    <div align=center >
-        <ion-item class="ion-padding" lines="none">
-          <ion-label>Fecha de publicacion:</ion-label>
-        </ion-item>
-    </div>
+    <ion-item *ngFor="let pregunta of preguntaInfo" lines="full">
+      <!-- <item > -->
+
+        <ion-label class="texto-solicitud"  (click)="carteleraDetalle(pregunta)">
+          <h2 class="text">
+            <small>
+              <ion-label>Fecha de publicacion: {{pregunta.fecha}}</ion-label>
+              <!-- {{solicitudes.Codigo}}-{{solicitudes.Fecha}}-{{solicitudes.Estado}}-{{solicitudes.Hora}} -->
+            </small>
+          </h2>
+          <h3 class="whiteSpaceClass">  
+            {{pregunta.id}}
+            {{pregunta.nombre}}
+            <!-- {{solicitudes.TipoSolicitud}} -->
+            'Informacion de pregunta'
+          </h3>
+        </ion-label>
+
+      </ion-item>
+    <!-- </div> -->
   </ion-card>
 </ion-content>

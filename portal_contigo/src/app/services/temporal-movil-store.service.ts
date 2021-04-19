@@ -12,6 +12,7 @@ export class TemporalMovilStoreService {
   nomina:any;
   cartelera:any;
   politica:any;
+  pregunta:any;
   d = new Date();
   constructor() { }
 
@@ -85,6 +86,14 @@ export class TemporalMovilStoreService {
 
   sendInfoPolitica(){
     return this.politica
+  }
+
+  getInfoPregunta(pregunta){
+    this.pregunta = pregunta
+  }
+
+  sendInfoPregunta(){
+    return this.pregunta
   }
 
   fechaHoy(Ndias){
