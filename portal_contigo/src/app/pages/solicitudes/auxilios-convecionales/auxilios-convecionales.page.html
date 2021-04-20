@@ -13,6 +13,8 @@
 </ion-header>
 
 <ion-content>
+<ion-list>
+  <form (ngSubmit)="enviarAuxConvencionales()">
 
   <ion-button class="item-solicitud-boton" color="medium" (click)="verRequsitos()" expand="block"  shape="round">
     <ion-label>
@@ -26,17 +28,10 @@
     </ion-label>
   </div>
   <ion-card>
-    <div>
-      <!-- <ion-select #c [(ngModel)]="aprobForm.Estado" name="Estado" (ionChange)="changeEstadoListener(c.value)" [value]=" "> -->
-      <ion-select slot="end" placeholder="Seleccione...">>
-        <!-- <ion-select-option *ngFor="let parametros of listadoEstadosParametrosArreglo" value="{{parametros}}">{{parametros}}</ion-select-option> -->
-        <ion-select-option >datos</ion-select-option>
-        <ion-select-option >datos</ion-select-option>
-        <ion-select-option >datos</ion-select-option>
-        <ion-select-option >datos</ion-select-option>
-        <ion-select-option >datos</ion-select-option>
-        <ion-select-option >datos</ion-select-option>
 
+    <div>
+      <ion-select #c slot="end" [(ngModel)]="aprobForm.Auxilio" name="Auxilio" [value]=" ">
+        <ion-select-option *ngFor="let auxilio of listadoAuxilio" value="{{auxilio}}">{{auxilio}}</ion-select-option>
       </ion-select>
     </div>
   </ion-card>
@@ -48,7 +43,9 @@
     </div>
     <ion-card>
       <ion-item>
-        <ion-textarea
+        <ion-textarea 
+          [(ngModel)]="aprobForm.Respuesta" 
+          name="Respuesta"
           value="">
         </ion-textarea>
       </ion-item>
@@ -64,6 +61,8 @@
       <img  (click)="tomarFoto()" src="../../../assets/imagenes/camara.png" alt="">
     </ion-card>
   </div>
+</form>
+</ion-list>
   <ion-button class="item-solicitud-boton" color="medium" (click)="enviarAuxConvencionales()" expand="block" shape="round">ENVIAR</ion-button>
 
 
