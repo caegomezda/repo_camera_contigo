@@ -1,9 +1,9 @@
 <ion-header>
   <ion-toolbar class="new-background-color">
     <ion-buttons slot="start" >
-      <ion-back-button defaultHref="" icon="arrow-back-outline" mode="md"></ion-back-button>
+      <ion-back-button defaultHref="solicitudes" icon="arrow-back-outline" mode="md"></ion-back-button>
     </ion-buttons>
-      <ion-title >Requisitos {{nombreSolicitud}}</ion-title>
+      <ion-title >Requisitos {{nombreSolicitud_2}}</ion-title>
   </ion-toolbar>
 
   <ion-item lines="full" >
@@ -16,36 +16,18 @@
 <ion-content>
   <ion-card>
     <ion-list>
-      <ion-item>
-        <ion-label>Titulo</ion-label>
-      </ion-item>
-      <ion-item>
-        <ion-label>datos</ion-label>
-      </ion-item>
-      <ion-item>
-        <ion-label>datos</ion-label>
-      </ion-item>
-      <ion-item>
-        <ion-label>datos</ion-label>
-      </ion-item>      
-      <ion-item>
-        <ion-label>Titulo</ion-label>
-      </ion-item>
-      <ion-item>
-        <ion-label>datos</ion-label>
-      </ion-item>      
-      <ion-item>
-        <ion-label>datos</ion-label>
-      </ion-item>      
-      <ion-item>
-        <ion-label>datos</ion-label>
-      </ion-item>      
-      <ion-item>
-        <ion-label>datos</ion-label>
-      </ion-item>      
-      <ion-item>
-        <ion-label>datos</ion-label>
-      </ion-item>
+      <div *ngIf="isLoad">
+
+        <ion-item *ngFor="let texto of infoParametros">
+          <ion-label class="titulo" *ngIf="texto.Tipo === 'titulo'">{{texto.Nombre}}</ion-label>
+          <ion-label class="subtitulo" *ngIf="texto.Tipo === 'subtitulo'">{{texto.Nombre}}</ion-label>
+          <ion-label class="requsito" *ngIf="texto.Tipo === 'requisito'">{{texto.Nombre}}</ion-label>
+
+        </ion-item>
+      </div>
+      <div *ngIf="!isLoad" align=center>
+        <ion-label>{{infoParametros}}</ion-label>
+      </div>
     </ion-list>
   </ion-card>
 </ion-content>

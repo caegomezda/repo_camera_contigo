@@ -48,7 +48,10 @@ export class AprobacionesDetallePage implements OnInit {
   async getListAprobacionesDetalle(){
     this.listadoEstadosParametrosArreglo = []
     let result = await this.storage.sendInfoListAprobacionesDetalle();
-    let resultParametros = await this.parametros.listaParametros("1");
+    let form = {
+      Tipo: "1"
+    }
+    let resultParametros = await this.parametros.listaParametros(form);
     this.listadoEstadosParametros = resultParametros['ListaParametros'];
     for (let index = 0; index < this.listadoEstadosParametros.length; index++) {
       this.listadoEstadosParametrosArreglo.push(this.listadoEstadosParametros[index]['Nombre'])
@@ -115,7 +118,10 @@ export class AprobacionesDetallePage implements OnInit {
   async changeEstadoListener(value){
     this.aprobForm['Redireccionar'] = value
     if(value === "REDIRECCIONADO"){
-      let resultParametrosUsuarios = await this.parametros.listaParametros("2");
+      let form = {
+        Tipo: "2"
+      }
+      let resultParametrosUsuarios = await this.parametros.listaParametros(form);
       this.listadoParametrosUsuarios = resultParametrosUsuarios['ListaParametros']
       this.isEstadoRedireccionar = true
     }else{

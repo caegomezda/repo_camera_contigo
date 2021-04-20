@@ -15,14 +15,11 @@ export class ParametrosService {
     this.httpOptions = { headers: new HttpHeaders({ 'Content-Type':  'application/json'}) };
    }
 
-  listaParametros(Tipo){
-    let newForm = {
-      Tipo: Tipo
-    }
-    const apiUrl = `${this.url}/svc_parametros.php`;
+  listaParametros(form){
     
-    let json = newForm
+      const apiUrl = `${this.url}/svc_parametros.php`;
+      let json = form
+      return this.http.post(`${apiUrl}`, json, this.httpOptions).pipe(map( data => data)).toPromise();
     
-    return this.http.post(`${apiUrl}`, json, this.httpOptions).pipe(map( data => data)).toPromise();
   }
 }
