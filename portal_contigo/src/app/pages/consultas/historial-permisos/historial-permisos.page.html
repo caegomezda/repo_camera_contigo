@@ -14,17 +14,19 @@
 </ion-header>
 
 <ion-content>
-  <ion-card>
-    <div align=center class="texto-solicitud">
-
-      <ion-label>
-        No tiene permisos reportados
-      </ion-label>
+  <ion-card *ngIf="isLoad">
+    <div  *ngFor="let permiso of Permisos">
+      <div align=center class="texto-solicitud">
+        <ion-label >
+          {{permiso}}
+        </ion-label>
+      </div>
     </div>
+
     <div align=center class="texto-solicitud">
 
       <ion-label>
-        No tiene mas permisos
+        {{listaInfoPermisos.TotalPermisos}}
       </ion-label>
     </div>
   </ion-card>

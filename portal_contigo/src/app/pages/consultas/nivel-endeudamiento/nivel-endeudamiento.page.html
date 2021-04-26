@@ -6,19 +6,19 @@
     <ion-title>Mi nivel de endeudamiento</ion-title>
   </ion-toolbar>
 
-  <ion-item lines="full" >
+  <ion-item lines="full" *ngIf="isLoad">
     <ion-label align=center>
-      <font size="2" class="whiteSpaceClass">Se presenta porcentaje de endeudamiento al ultimo corte</font>
+      <font size="2" class="whiteSpaceClass">{{listaInfoEndeundamiento.Valor}}</font>
     </ion-label>
   </ion-item>
 </ion-header>
 
 <ion-content>
-  <ion-card>
+  <ion-card *ngIf="isLoad">
     <div align=center class="texto-solicitud">
 
       <ion-label>
-        Su endeudamiento es de 'nivel de endeudamiento' es mayor al esperado. No tiene posibilidad de credito
+        {{listaInfoEndeundamiento.Endeudamiento}}
       </ion-label>
     </div>
   </ion-card>

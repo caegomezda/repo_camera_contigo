@@ -13,51 +13,34 @@
   </ion-item>
 </ion-header>
 
-<ion-content>
-  <ion-card>
+<ion-content >
+  <ion-card *ngIf="isLoad">
     <ion-list>
-      <ion-grid fixed>
-        <ion-row>
-          <ion-col size="6">
-            <div>
-              <ion-label  class="texto-solicitud">
-                Navidad:
-              </ion-label>
-              <ion-label  class="texto-solicitud">
-                Semana Santa:
-              </ion-label>
-              <ion-label  class="texto-solicitud">
-                Carestia:
-              </ion-label>
-              <ion-label  class="texto-solicitud">
-                Vacaciones:
-              </ion-label>
-              <ion-label  class="texto-solicitud">
-                Extra 'mes':
-              </ion-label>
-            </div>
-          </ion-col>
-          <ion-col size="6">
-            <div >
-              <ion-label class="texto-solicitud">
-                'valor prima'
-              </ion-label>
-              <ion-label class="texto-solicitud">
-                'valor prima'
-              </ion-label>
-              <ion-label class="texto-solicitud">
-                'valor prima'
-              </ion-label>
-              <ion-label class="texto-solicitud">
-                'valor prima'
-              </ion-label>
-              <ion-label class="texto-solicitud">
-                'valor prima'
-              </ion-label>
-            </div>
-          </ion-col>
-        </ion-row>
-      </ion-grid>
+      <ion-item lines="none">
+        <ion-label class="texto-solicitud">
+          {{listaInfoPrimas.Navidad}}
+        </ion-label>
+      </ion-item>
+      <ion-item lines="none">
+        <ion-label class="texto-solicitud">
+          {{listaInfoPrimas.SemanaSanta}}
+        </ion-label>
+      </ion-item>
+      <ion-item lines="none">
+        <ion-label class="texto-solicitud">
+          {{listaInfoPrimas.Carestia}}
+        </ion-label>
+      </ion-item>
+      <ion-item lines="none">
+        <ion-label class="texto-solicitud">
+          {{listaInfoPrimas.Vacaciones}}
+        </ion-label>
+      </ion-item>
+      <ion-item lines="none">
+        <ion-label class="texto-solicitud">
+          {{listaInfoPrimas.Extracto}}
+        </ion-label>
+      </ion-item>
     </ion-list>
   </ion-card>
 </ion-content>

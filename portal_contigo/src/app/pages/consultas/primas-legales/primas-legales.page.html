@@ -6,19 +6,19 @@
     <ion-title>Primas legales</ion-title>
   </ion-toolbar>
 
-  <ion-item lines="full" >
+  <ion-item lines="full" *ngIf="isLoad">
     <ion-label align=center>
-      <font size="2" class="whiteSpaceClass">Valor al cierre del mes anterior</font>
+      <font size="2" class="whiteSpaceClass">{{listaInfoPrimas.Valor}}</font>
     </ion-label>
   </ion-item>
 </ion-header>
 
 <ion-content>
-  <ion-card>
+  <ion-card *ngIf="isLoad">
     <div align=center class="texto-solicitud">
 
       <ion-label>
-        Prima 'valor mes' 'valor prima'
+        {{listaInfoPrimas.Prima}}
       </ion-label>
     </div>
   </ion-card>

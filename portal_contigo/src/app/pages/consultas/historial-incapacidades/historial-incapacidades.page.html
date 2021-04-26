@@ -14,17 +14,19 @@
 </ion-header>
 
 <ion-content>
-  <ion-card>
-    <div align=center class="texto-solicitud">
-
-      <ion-label>
-        En el ano 'ano' tuvo 'numero de dias' dias
-      </ion-label>
+  <ion-card *ngIf="isLoad">
+    <div  *ngFor="let incapacidad of Incapacidades">
+      <div align=center class="texto-solicitud">
+        <ion-label >
+          {{incapacidad}}
+        </ion-label>
+      </div>
     </div>
+
     <div align=center class="texto-solicitud">
 
       <ion-label>
-        No tiene mas ausentismos
+        {{listaInfoIncapacidades.TotalHoras}}
       </ion-label>
     </div>
   </ion-card>
