@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { SesionService } from 'src/app/services/sesion.service';
 import { TemporalMovilStoreService } from 'src/app/services/temporal-movil-store.service';
 
 @Component({
@@ -7,14 +9,17 @@ import { TemporalMovilStoreService } from 'src/app/services/temporal-movil-store
   styleUrls: ['./camara-page.page.scss'],
 })
 export class CamaraPagePage implements OnInit {
-  nombreSolicitud:any
-  constructor(private storage: TemporalMovilStoreService) { }
+  nombreSolicitud:any;
+  infoUsuario:any;
+  constructor(private storage: TemporalMovilStoreService,
+              private sesion : SesionService,
+              private router : Router) { }
 
   ngOnInit() {
   }
 
   ionViewWillEnter(){
-    this.getNombreSolicitud();
+    this.sesion.sesionCaller()
   }
   
   adjuntarFoto(){
@@ -31,6 +36,6 @@ export class CamaraPagePage implements OnInit {
 
   async getNombreSolicitud(){
     this.nombreSolicitud = await this.storage.sendNombresolicitud()
-    console.log("this.nombreSolicitud",this.nombreSolicitud);
   }
+
 }

@@ -20,7 +20,7 @@ export class ApiCallerService {
     
     let json = form
     json = JSON.stringify(json);
-    console.log("json",json)
+    
     return this.http.post(`${apiUrl}`, json, this.httpOptions).pipe(map( data => data)).toPromise();
   }
 }

@@ -2,10 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { TemporalMovilStoreService } from 'src/app/services/temporal-movil-store.service';
 import { ParametrosService } from 'src/app/services/parametros.service';
-import { FormBuilder, FormControl, FormGroup,Validators } from '@angular/forms';
 import { AlertController, LoadingController } from '@ionic/angular';
-import { GestionadoService } from 'src/app/services/gestionado.service';
 import { SolicitudesService } from 'src/app/services/solicitudes.service';
+import { SesionService } from 'src/app/services/sesion.service';
 
 
 @Component({
@@ -36,13 +35,14 @@ export class AprobacionesDetallePage implements OnInit {
               private parametros: ParametrosService,
               private alertController : AlertController,
               private solicitudes : SolicitudesService,
+              private sesion : SesionService
   ){}
 
   ngOnInit() {
   }
   
   ionViewWillEnter(){
-    this.getListAprobacionesDetalle()
+    this.callInfoUsuario();
   }
 
   async getListAprobacionesDetalle(){
@@ -60,8 +60,7 @@ export class AprobacionesDetallePage implements OnInit {
     this.isLoad = true;
   }
 
-  async enviarAprobaciones(){
-    await this.formMaker();
+  enviarAprobaciones(){
     if(this.aprobForm.Estado === "empty"){
       this.alertMeController("reject_Estado")
     }else if(this.aprobForm.Estado === "REDIRECCIONADO" && this.aprobForm.Redireccionar === "empty"){
@@ -75,9 +74,22 @@ export class AprobacionesDetallePage implements OnInit {
     }
   }
 
-  async formMaker(){
+  async sesionVerificator(){
+    let result = await this.sesion.sesion(this.infoUsuario);
+    if (!result) {
+      this.router.navigate(['/login'])
+    }
+  }
+
+  async callInfoUsuario(){
     let result= await this.storage.sendInfoUsuario();
-    this.infoUsuario = result[1].value.Pusuario
+    if (result) {
+      this.infoUsuario = result[1].value.Pusuario
+      this.getListAprobacionesDetalle();
+    }else{
+      this.sesionVerificator();
+    }
+
   }
 
   async alertMeController(estado){
