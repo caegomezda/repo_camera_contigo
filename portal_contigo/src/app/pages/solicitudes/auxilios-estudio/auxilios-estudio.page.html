@@ -13,57 +13,60 @@
 </ion-header>
 
 <ion-content>
-
-  <ion-button class="item-solicitud-boton" color="medium" (click)="verRequsitos()" expand="block"  shape="round">
-    <ion-label>
-      VER REQUSITOS
-    </ion-label>
-  </ion-button>
-
-  <div align=left class="item-solicitud"> 
-    <ion-label>
-      Lista de Auxilios:
-    </ion-label>
-  </div>
-  <ion-card>
-    <div>
-      <!-- <ion-select #c [(ngModel)]="aprobForm.Estado" name="Estado" (ionChange)="changeEstadoListener(c.value)" [value]=" "> -->
-      <ion-select slot="end" placeholder="Seleccione...">>
-        <!-- <ion-select-option *ngFor="let parametros of listadoEstadosParametrosArreglo" value="{{parametros}}">{{parametros}}</ion-select-option> -->
-        <ion-select-option >datos</ion-select-option>
-        <ion-select-option >datos</ion-select-option>
-        <ion-select-option >datos</ion-select-option>
-        <ion-select-option >datos</ion-select-option>
-        <ion-select-option >datos</ion-select-option>
-        <ion-select-option >datos</ion-select-option>
-
-      </ion-select>
-    </div>
-  </ion-card>
-
+  <ion-list>
+    <form (ngSubmit)="enviarAuxConvencionales()">
+  
+    <ion-button class="item-solicitud-boton" color="medium" (click)="verRequsitos()" expand="block"  shape="round">
+      <ion-label>
+        VER REQUSITOS
+      </ion-label>
+    </ion-button>
+  
     <div align=left class="item-solicitud"> 
       <ion-label>
-        Descripcion:
+        Lista de Auxilios:
       </ion-label>
     </div>
     <ion-card>
-      <ion-item>
-        <ion-textarea
-          value="">
-        </ion-textarea>
-      </ion-item>
+      <div >
+        <ion-select   interface="popover" #c slot="end" [(ngModel)]="aprobForm.Auxilio" name="Auxilio" [value]=" ">
+            <ion-select-option  *ngFor="let auxilio of listaAuxilios" value="{{auxilio.Codigo}}">
+                <ion-label>
+                  {{auxilio.Codigo}}
+                </ion-label>
+              </ion-select-option>
+        </ion-select>
+      </div>
     </ion-card>
+  
+      <div align=left class="item-solicitud"> 
+        <ion-label>
+          Descripcion:
+        </ion-label>
+      </div>
+      <ion-card>
+        <ion-item>
+          <ion-textarea 
+            [(ngModel)]="aprobForm.Respuesta" 
+            name="Respuesta"
+            value="">
+          </ion-textarea>
+        </ion-item>
+      </ion-card>
+  
+    <div align=left class="item-solicitud"> 
+      <ion-label>
+        Resgitro Fotográfico:
+      </ion-label>
+    </div>
+    <div   >
+      <ion-card align=center>
+        <img  (click)="tomarFoto()" src="../../../assets/imagenes/camara.png" alt="">
+      </ion-card>
+    </div>
+  </form>
+  </ion-list>
 
-  <div align=left class="item-solicitud"> 
-    <ion-label>
-      Resgitro Fotográfico:
-    </ion-label>
-  </div>
-  <div   >
-    <ion-card align=center>
-      <img  (click)="tomarFoto()" src="../../../assets/imagenes/camara.png" alt="">
-    </ion-card>
-  </div>
   <ion-button class="item-solicitud-boton" color="medium" (click)="enviarAuxEstudio()" expand="block" shape="round">ENVIAR</ion-button>
 
 

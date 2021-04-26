@@ -13,7 +13,7 @@ export class AuxiliosConvecionalesPage implements OnInit {
   infoUsuario:any;
   isLoad:Boolean = false;
   aprobForm = {
-    Auxilio:"empty",
+    Auxilio:"",
     Tipo:"",
     Pusuario:"",
     Respuesta:"",
@@ -51,12 +51,12 @@ export class AuxiliosConvecionalesPage implements OnInit {
   async getListaAuxilios(){
     this.infoUsuario = await this.storage.sendInfoUsuario()
     let form = {
-      Tipo: "1",
-      Pusuario: this.infoUsuario
+      Pusuario: this.infoUsuario[1].value.Pusuario,
+      Tipo: "1"
     }
     let result = await this.auxilios.listaAuxilios(form);
     this.listaAuxilios = result['ListaParametros'];
-    console.log("this.listaAuxilios",this.listaAuxilios);
     this.isLoad = true;
   }
+  
 }

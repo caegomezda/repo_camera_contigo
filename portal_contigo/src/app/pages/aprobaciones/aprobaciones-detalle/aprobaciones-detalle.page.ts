@@ -118,11 +118,11 @@ export class AprobacionesDetallePage implements OnInit {
   async changeEstadoListener(value){
     this.aprobForm['Redireccionar'] = value
     if(value === "REDIRECCIONADO"){
-      let form = {
-        Tipo: "2"
-      }
-      let resultParametrosUsuarios = await this.parametros.listaParametros(form);
-      this.listadoParametrosUsuarios = resultParametrosUsuarios['ListaParametros']
+      // let form = {
+      //   Tipo: "2"
+      // }
+      // let resultParametrosUsuarios = await this.parametros.listaParametros(form);
+      // this.listadoParametrosUsuarios = resultParametrosUsuarios['ListaParametros']
       this.isEstadoRedireccionar = true
     }else{
       this.isEstadoRedireccionar = false

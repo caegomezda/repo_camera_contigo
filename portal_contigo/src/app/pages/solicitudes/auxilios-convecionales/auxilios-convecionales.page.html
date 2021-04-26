@@ -28,10 +28,13 @@
     </ion-label>
   </div>
   <ion-card>
-
-    <div>
-      <ion-select #c slot="end" [(ngModel)]="aprobForm.Auxilio" name="Auxilio" [value]=" ">
-        <ion-select-option *ngFor="let auxilio of listadoAuxilio" value="{{auxilio}}">{{auxilio}}</ion-select-option>
+    <div >
+      <ion-select   interface="popover" #c slot="end" [(ngModel)]="aprobForm.Auxilio" name="Auxilio" [value]=" ">
+          <ion-select-option  *ngFor="let auxilio of listaAuxilios" value="{{auxilio.Codigo}}">
+              <ion-label>
+                {{auxilio.Codigo}}
+              </ion-label>
+            </ion-select-option>
       </ion-select>
     </div>
   </ion-card>

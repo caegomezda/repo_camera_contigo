@@ -50,7 +50,11 @@ export class LoginPage implements OnInit {
     });
 
     await loading.present();
-    let result = await this.auth.login(this.loginForm.value);
+    let newForm = {
+      Pusuario : this.loginForm.value.Pusuario,
+      Ppassword : this.loginForm.value.Ppassword
+    }
+    let result = await this.auth.login(newForm);
     this.storeUsuInfo.getInfoUsuario(result,this.loginForm);
     if (result['Estado'] === false) {
       await loading.onDidDismiss();
