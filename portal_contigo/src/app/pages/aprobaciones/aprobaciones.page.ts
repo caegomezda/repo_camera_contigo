@@ -36,24 +36,14 @@ export class AprobacionesPage implements OnInit {
     this.listaInfoAprobaciones = result['ListaParametros']
   }
 
-  async sesionVerificator(){
-    let result = await this.sesion.sesion(this.infoUsuario);
-    if (!result) {
-      this.router.navigate(['/login'])
-    }
-  }
-
   async callInfoUsuario(){
     let result= await this.storage.sendInfoUsuario();
     if (result) {
       this.infoUsuario = result[1].value.Pusuario
       this.ListaAprobaciones();
-      console.log("this.infoUsuario_1",this.infoUsuario)
     }else{
-      this.sesionVerificator();
-      console.log("this.infoUsuario_2",this.infoUsuario)
+      this.sesion.sesionVerificator();
     }
-
   }
 
   aprobacionesDetalle(solicitudes){

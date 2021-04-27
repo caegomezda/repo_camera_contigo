@@ -19,7 +19,7 @@ export class CamaraPagePage implements OnInit {
   }
 
   ionViewWillEnter(){
-    this.sesion.sesionCaller()
+    this.callInfoUsuario()
   }
   
   adjuntarFoto(){
@@ -36,6 +36,15 @@ export class CamaraPagePage implements OnInit {
 
   async getNombreSolicitud(){
     this.nombreSolicitud = await this.storage.sendNombresolicitud()
+  }
+
+  async callInfoUsuario(){
+    let result= await this.storage.sendInfoUsuario();
+    if (result) {
+      this.infoUsuario = result[1].value.Pusuario
+    }else{
+      this.sesion.sesionVerificator();
+    }
   }
 
 }

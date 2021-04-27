@@ -21,6 +21,7 @@ export class AprobacionesDetallePage implements OnInit {
   isEstadoRedireccionar = false;
   infoUsuario:any;
   listadoParametrosUsuarios:any;
+  
   aprobForm = {
     Estado:"empty",
     Respuesta:"",
@@ -74,12 +75,12 @@ export class AprobacionesDetallePage implements OnInit {
     }
   }
 
-  async sesionVerificator(){
-    let result = await this.sesion.sesion(this.infoUsuario);
-    if (!result) {
-      this.router.navigate(['/login'])
-    }
-  }
+  // async sesionVerificator(){
+  //   let result = await this.sesion.sesion();
+  //   if (!result) {
+  //     this.router.navigate(['/login'])
+  //   }
+  // }
 
   async callInfoUsuario(){
     let result= await this.storage.sendInfoUsuario();
@@ -87,9 +88,8 @@ export class AprobacionesDetallePage implements OnInit {
       this.infoUsuario = result[1].value.Pusuario
       this.getListAprobacionesDetalle();
     }else{
-      this.sesionVerificator();
+      this.sesion.sesionVerificator();
     }
-
   }
 
   async alertMeController(estado){

@@ -17,7 +17,7 @@ export class ApiCallerService {
    //nota para estandarizar este metodo para las solicitudes, pues exiten varias que usan mismo metos pero y solo es agregarle el formulario, el cual puedo ser enviado con antelacion
   apiListas(form,tipo){
     const apiUrl = `${this.url}/svc_${tipo}.php`;
-    
+    console.log("form en api caller",form)
     let json = form
     json = JSON.stringify(json);
     

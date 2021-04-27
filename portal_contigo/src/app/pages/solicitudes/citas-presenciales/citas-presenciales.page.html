@@ -9,13 +9,20 @@
 </ion-header>
 
 <ion-content>
-  <ion-list>
-    <div align=center class="div-item" *ngFor="let cita of doctoresCitas">
+  <ion-list *ngIf="isLoad">
+    <!-- <div align=center class="div-item" *ngFor="let cita of doctoresCitas" >
       <ion-button shape="round" class="ion-button" (click)="citasDetalles(cita)" expand="full" color="medium">
         <ion-label align=center class="ion-label-text">
           {{cita}}
+
         </ion-label>
+
       </ion-button>
+  </div> -->
+
+  <div>
+    <ion-img [src]="picImage"></ion-img>
   </div>
+
   </ion-list>
 </ion-content>
